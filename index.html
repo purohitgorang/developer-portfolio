@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gorang Purohit — Software Engineer</title>
+  <meta name="description" content="Portfolio of Gorang Purohit. Security-focused software engineer specializing in AI-driven threat detection, computer vision, and defensive infrastructure.">
+  
+  <!-- Neo-Brutalist Typography (Space Grotesk + Plus Jakarta Sans + JetBrains Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/matrix-hytrace.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- Neo-Brutalist Grid Header -->
+  <header class="site-header">
+    <div class="nav-grid-container">
+      <a href="#" class="nav-cell-logo">
+        <span class="brand-title">Gorang.io</span>
+      </a>
+
+      <nav class="nav-cell-links">
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-cell-action">
+        <a href="#contact" class="btn-nav-hire">Hire Me</a>
+      </div>
+
+      <div class="nav-cell-icon">
+        <a href="https://github.com/purohitgorang" target="_blank" rel="noopener noreferrer" class="btn-nav-icon" title="GitHub Profile">
+          🐙
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section (Krinova 2-Column Neo-Brutalist Layout) -->
+    <section class="hero-section">
+      <div class="hero-grid-wrapper">
+        <!-- Hero Left Column -->
+        <div class="hero-left-col">
+          <div class="hero-greeting">Hi, my name is Gorang Purohit</div>
+          
+          <h1 class="hero-main-title">
+            Turning complex security into
+            <span class="hero-highlight-box">defensible realities</span>
+          </h1>
+          
+          <p class="hero-description">
+            I'm a security-focused software engineer with a passion for building robust, real-time machine learning systems, edge computer vision monitoring, and packet-level threat analysis. I turn complex low-level protocols into resilient, high-performance systems.
+          </p>
+
+          <div class="hero-button-row">
+            <a href="#projects" class="btn-brutal-primary">Explore Projects ↗</a>
+            <a href="#contact" class="btn-brutal-secondary">Get in Touch ✉️</a>
+          </div>
+        </div>
+
+        <!-- Hero Right Column (Krinova Sticker Stage) -->
+        <div class="hero-right-col">
+          <div class="hero-sticker-stage">
+            <!-- Background Shaped Card -->
+            <div class="hero-main-card">
+              <!-- Developer Pass Badge with Name & Passions -->
+              <div class="hero-dev-pass">
+                <div class="dev-pass-header">
+                  <span class="dev-pass-id">DEV_PASS // GP-2026</span>
+                  <span class="dev-pass-status">
+                    <span class="pulse-dot"></span> LIVE &amp; BUILDING
+                  </span>
+                </div>
+
+                <div class="dev-pass-identity">
+                  <h2 class="dev-pass-name">GORANG PUROHIT</h2>
+                  <div class="dev-pass-title">Security &amp; AI Software Engineer</div>
+                  <div class="dev-pass-loc">📍 India • Defensible ML &amp; Edge Systems</div>
+                </div>
+
+                <div class="dev-pass-hobbies-section">
+                  <div class="dev-pass-section-lbl">⚡ Off The Clock &amp; Passions</div>
+                  <div class="dev-pass-hobbies-wrap">
+                    <span class="hobby-pill" style="background-color: var(--pastel-yellow);">🏃 Running</span>
+                    <span class="hobby-pill" style="background-color: var(--pastel-blue);">🚴 Cycling</span>
+                    <span class="hobby-pill" style="background-color: var(--pastel-green);">🏋️ Fitness</span>
+                    <span class="hobby-pill" style="background-color: var(--pastel-coral);">🏍️ Motorcycling</span>
+                    <span class="hobby-pill" style="background-color: var(--pastel-purple);">🎙️ Deep Talks</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Neo-Brutalist Sticker Badges -->
+            <div class="sticker-code-tag">&lt;/&gt;</div>
+            <div class="sticker-status-tag">✦ Available for roles</div>
+            <div class="sticker-star">★</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Showcase -->
+    <section class="projects-section" id="projects">
+      <div class="projects-container">
+        <div class="projects-header-wrap">
+          <div class="sub-tag-text">Case Studies &amp; System Architecture</div>
+          <h2 class="section-h2-title">Featured Projects</h2>
+        </div>
+        <!-- Project cards rendered dynamically via js/app.js -->
+        <div id="projectsList" style="display: flex; flex-direction: column; gap: 3.5rem;"></div>
+      </div>
+    </section>
+    </section>
+
+    <!-- 7. About & Technical Stack Section -->
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <div class="sub-tag-text">Background & Arsenal</div>
+        <h2 class="section-h2-title">About Me & Technical Stack</h2>
+
+        <div class="about-split-grid">
+          <!-- Col 1: Bio & Philosophy -->
+          <div style="display: flex; flex-direction: column; gap: 2rem;">
+            <div class="about-card-box">
+              <h3 class="card-box-h3">Engineering Philosophy</h3>
+              <p class="about-p">
+                I am a software engineer specializing in applied machine learning, computer vision, and defensive network security. My work focuses on building robust, real-time systems that operate efficiently without unnecessary cloud dependencies or bloated runtimes.
+              </p>
+              <p class="about-p">
+                Previously, I led cross-functional technical teams coordinating software architecture and enterprise client integrations. I hold a strong foundation in core computer science fundamentals—data structures, algorithms, operating system primitives, and computer networking.
+              </p>
+            </div>
+
+            <!-- Skills Box -->
+            <div class="about-card-box">
+              <h3 class="card-box-h3">Technical Stack</h3>
+              <div class="skills-badge-wrap" id="skillsContainer">
+                <!-- Rendered via js/app.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Life Outside Code / Hobbies -->
+          <div class="about-card-box">
+            <h3 class="card-box-h3">Beyond the Terminal</h3>
+            <p class="about-p">
+              High-agency engineering requires physical endurance, clarity of mind, and genuine social curiosity. Outside of building defensible systems and training neural nets:
+            </p>
+
+            <div class="hobbies-list-stack">
+              <div class="hobby-card-row">
+                <div class="hobby-icon-box" style="background-color: var(--pastel-yellow);">🏃</div>
+                <div class="hobby-text-wrap">
+                  <span class="hobby-name-title">Distance Running</span>
+                  <span class="hobby-desc-text">Endurance training that builds grit, patience, and mental stamina for long debugging sessions.</span>
+                </div>
+              </div>
+
+              <div class="hobby-card-row">
+                <div class="hobby-icon-box" style="background-color: var(--pastel-blue);">🚴</div>
+                <div class="hobby-text-wrap">
+                  <span class="hobby-name-title">Road Cycling</span>
+                  <span class="hobby-desc-text">Exploring distance routes, maintaining cadence discipline, and sustained high output.</span>
+                </div>
+              </div>
+
+              <div class="hobby-card-row">
+                <div class="hobby-icon-box" style="background-color: var(--pastel-green);">🏋️</div>
+                <div class="hobby-text-wrap">
+                  <span class="hobby-name-title">Strength &amp; Physical Fitness</span>
+                  <span class="hobby-desc-text">Consistent daily training to keep physical energy, posture, and sharp mental focus at peak levels.</span>
+                </div>
+              </div>
+
+              <div class="hobby-card-row">
+                <div class="hobby-icon-box" style="background-color: var(--pastel-coral);">🏍️</div>
+                <div class="hobby-text-wrap">
+                  <span class="hobby-name-title">Motorcycling</span>
+                  <span class="hobby-desc-text">Passionate about two wheels on open highways, mechanical intuition, and spatial awareness.</span>
+                </div>
+              </div>
+
+              <div class="hobby-card-row">
+                <div class="hobby-icon-box" style="background-color: var(--pastel-purple);">🎙️</div>
+                <div class="hobby-text-wrap">
+                  <span class="hobby-name-title">Connecting with New People</span>
+                  <span class="hobby-desc-text">Energized by deep conversations with builders, founders, and curious minds—exchanging bold perspectives and ideas.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-card-wrap">
+        <span class="contact-badge-label">✦ GET IN TOUCH ✦</span>
+        <h2 class="contact-h2-title">Let's build together</h2>
+        <p class="contact-sub-p">
+          I am currently open to Software Engineering, AI Integration, and Defensive Security Engineering opportunities at product-first engineering teams.
+        </p>
+
+        <div class="contact-email-box">
+          <span class="email-address-text" id="emailText">gorangpurohit@gmail.com</span>
+          <button class="btn-copy-email" id="btnCopyEmail">Copy Email 📋</button>
+        </div>
+
+        <div class="contact-socials-row">
+          <a href="mailto:gorangpurohit@gmail.com" class="social-pill-btn">Email ➔</a>
+          <a href="https://linkedin.com/in/gorangpurohit" target="_blank" rel="noopener noreferrer" class="social-pill-btn">LinkedIn ↗</a>
+          <a href="https://github.com/purohitgorang" target="_blank" rel="noopener noreferrer" class="social-pill-btn">GitHub ↗</a>
+          <a href="https://x.com/GorangPurohit" target="_blank" rel="noopener noreferrer" class="social-pill-btn">Twitter / X ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <span>Gorang Purohit © 2026</span>
+      <span>Security-Focused Software Engineer</span>
+    </div>
+  </footer>
+
+  <!-- 10. System Design Architecture Flowchart Modal Container -->
+  <div id="modalContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/projects-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

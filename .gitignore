@@ -1,0 +1,10 @@
+# Logs
+*.log
+
+# Root-level temporary test screenshots
+/*.png
+
+# System / IDE
+.vscode/
+.idea/
+__pycache__/
