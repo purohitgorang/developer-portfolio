@@ -41,10 +41,10 @@ const PROJECTS_DATA = [
     image: "images/drone-hawk-x.png",
     tags: ["PyTorch", "YOLOv8", "CUDA", "FastAPI", "React 19", "Edge Vision"],
     highlights: [
-      "100% offline edge surveillance running on local hardware with zero external API dependencies or cloud egress.",
-      "Hardware-accelerated inference via PyTorch CUDA on local NVIDIA GPUs with automated CPU fallback.",
-      "Dual inspection modes: live optical webcam stream with HUD bounding overlays and drag-and-drop imagery inspection.",
-      "Timestamped airspace incident ledger logging detection telemetry, bounding coordinates, and confidence scoring."
+      "Measured hardware latency: 14.8 ms (~67 FPS) on NVIDIA GTX 1650 (CUDA) and 42.1 ms on Intel i7 CPU fallback.",
+      "100% precision across 16-sample benchmark (8 multi-rotor/FPV drone targets, 8 wildlife and aviation distractors).",
+      "Presentation Attack Detection (PAD) using Moiré FFT frequency analysis and Laplacian variance to reject screen replays.",
+      "Air-gapped edge architecture with zero cloud egress, zero external API keys, and local SQLite/JSON incident telemetry."
     ],
     problemStatement: "Securing airspaces against unauthorized drone incursions requires reliable on-device processing. Cloud-based video APIs introduce high latency and require active internet connectivity that fails in air-gapped or field tactical defense perimeters.",
     solution: "Architected a zero-cloud, 100% offline edge AI system using an aerial drone fine-tuned YOLOv8 neural network. Implemented a Python FastAPI backend that interfaces directly with local GPU VRAM and streams real-time detection bounding coordinates to a React 19 tactical HUD interface.",
@@ -111,10 +111,10 @@ const PROJECTS_DATA = [
     image: "images/face-detection-v2.png",
     tags: ["Flask", "OpenCV ONNX", "YuNet", "SFace 128-d", "Liveness Detection", "GDPR Safe"],
     highlights: [
-      "Strict 1-to-1 verification against pre-selected employee ID, eliminating 1-to-N database search collisions.",
-      "Active Haar-cascade eye-blink liveness verification preventing photo and screen video spoofing attacks.",
-      "Dual portal architecture: employee check-in kiosk and administrative console for user registration and audit logging.",
-      "Privacy-first vector gallery: raw face photographs are discarded post-enrollment, retaining only mathematical cosine vectors."
+      "Measured ~35 ms edge CPU verification latency with O(1) 1-to-1 cosine distance thresholding (0.365 cutoff).",
+      "100% impostor rejection across 15 real-world edge tests (stranger video playback, synthetic blur, and extreme exposure).",
+      "Mirror-aware nose-to-eye geometric pose symmetry gating before active eye-blink liveness state machine activates.",
+      "Zero raw image storage: Only irreversible 128-d floating-point ONNX vector embeddings retained with append-only audit logging."
     ],
     problemStatement: "Biometric attendance systems frequently rely on cloud APIs or heavy proprietary SDKs that fail on commodity hardware, present security risks via 2D photograph spoofing, and violate privacy mandates by storing unencrypted face photos on database servers.",
     solution: "Engineered a pure Python Flask + OpenCV system utilizing 5-point YuNet landmark detection and 128-dimensional SFace embeddings. Built an active blink-based liveness verification pipeline that requires a genuine human blink before executing cosine similarity matching, recording verified attendance in an immutable CSV audit log.",
@@ -172,17 +172,17 @@ const PROJECTS_DATA = [
     id: "02",
     slug: "auraassess",
     displayUrl: "localhost:8080 // auraassess",
-    title: "AuraAssess — Multimodal Composure & Behavioral AI Engine",
+    title: "AuraAssess — Multimodal Telemetry & Self-Rehearsal Engine",
     shortTitle: "AuraAssess",
-    category: "AI & Behavioral Systems",
-    summary: "Real-time multimodal evaluation platform analyzing candidate composure, posture angles, and speech prosody during interviews via 468 facial mesh landmarks and full-duplex WebSockets.",
+    category: "Experimental AI & Telemetry",
+    summary: "Experimental multimodal telemetry and self-rehearsal engine streaming facial kinematics, posture angles, and acoustic prosody to help speakers practice presentation pacing with zero cloud retention.",
     image: "images/auraassess.png",
-    tags: ["FastAPI", "MediaPipe FaceMesh", "BlazePose", "WebSockets", "Multimodal AI", "Librosa"],
+    tags: ["FastAPI", "MediaPipe FaceMesh", "BlazePose", "WebSockets", "Experimental AI", "DSP"],
     highlights: [
-      "Simultaneous multimodal tracking extracting 468 facial geometry landmarks, upper-body posture, and vocal cadence.",
-      "4-state composure classification engine: Confident, Relaxed, Stressed, and Defensive.",
-      "15-second personalized baseline calibration using Z-score normalization for fair, unbiased scoring across candidates.",
-      "Full-duplex WebSocket streaming at 30 FPS powering an interactive browser dashboard on port 8080."
+      "Real-time 30 FPS client-side feature streaming across 468 FaceMesh points, 33 BlazePose skeletal keypoints, and acoustic prosody.",
+      "Experimental self-coaching telemetry: Designed for personal presentation rehearsal and body language self-awareness.",
+      "Ethical AI boundary: Explicitly non-evaluative; disclaims automated hiring suitability decisions and accounts for neurodivergent variance.",
+      "Ephemeral in-memory stream: Zero raw video or audio disk storage; processes rolling Z-scores over full-duplex WebSockets."
     ],
     problemStatement: "Evaluating candidate soft skills, communicative poise, and anxiety levels during technical interviews relies on subjective interviewer intuition. Human raters introduce cognitive bias and struggle to consistently evaluate communication signals across varied interview formats.",
     solution: "Built a real-time multimodal behavioral telemetry engine using MediaPipe FaceMesh and BlazePose integrated with an audio signal DSP pipeline. Normalizes metrics against an individualized 15-second baseline calibration, streaming continuous composure metrics and session reports over WebSockets.",
@@ -247,10 +247,10 @@ const PROJECTS_DATA = [
     image: "images/hytrace.png",
     tags: ["Next.js 15", "Solidity ERC-721", "Google Genkit", "Tailwind CSS", "CleanTech Web3"],
     highlights: [
-      "ERC-721 smart contracts encoding clean producer provenance, verification authority, and MWh generation volume.",
-      "Permanent on-chain retirement mechanism emitting CreditRetired events to eliminate certificate double-counting.",
-      "Google Genkit AI flows parsing power generation telemetry and auditing compliance documentation automatically.",
-      "Next.js 15 App Router trading interface with real-time portfolio tracking and transparent auditability."
+      "Solidity ERC-721 smart contract architecture with irreversible on-chain token burns preventing carbon offset double-counting.",
+      "Bridges physical-to-digital oracle trust gap via signed Modbus/MQTT plant telemetry validation (MWh vs. kg H2 produced).",
+      "Google Genkit AI flows automate compliance document auditing and renewable grid origin certificate cross-checks.",
+      "Decoupled client-side Web3 wallet state eliminating Next.js 15 App Router server-side hydration collisions."
     ],
     problemStatement: "Green hydrogen trading markets suffer from certificate double-counting, lack of producer origin verification, and slow manual auditing of power plant telemetry logs, opening the door to corporate greenwashing.",
     solution: "Architected a decentralized verification and trading protocol pairing ERC-721 immutable tokens with Google Genkit automated telemetry audit flows. Enforces irreversible on-chain token burns upon credit redemption, ensuring every MWh offset is permanently retired.",
