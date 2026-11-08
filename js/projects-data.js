@@ -33,7 +33,7 @@ const PROJECTS_DATA = [
   {
     id: "04",
     slug: "dronewatch",
-    displayUrl: "localhost:5173 // dronewatch",
+    displayUrl: "dronewatch",
     title: "Drone Hawk X — C-UAS Drone Detection & Surveillance Platform",
     shortTitle: "Drone Hawk X",
     category: "Computer Vision & AI",
@@ -103,7 +103,7 @@ const PROJECTS_DATA = [
   {
     id: "01",
     slug: "face-detection-v2",
-    displayUrl: "localhost:5000 // face-detection-v2",
+    displayUrl: "face-detection-v2",
     title: "Face Detection v2 — Offline Biometric Verification Portal",
     shortTitle: "Face Detection v2",
     category: "Computer Vision & Security",
@@ -171,7 +171,7 @@ const PROJECTS_DATA = [
   {
     id: "02",
     slug: "auraassess",
-    displayUrl: "localhost:8080 // auraassess",
+    displayUrl: "auraassess",
     title: "AuraAssess — Multimodal Telemetry & Self-Rehearsal Engine",
     shortTitle: "AuraAssess",
     category: "Experimental AI & Telemetry",
@@ -239,7 +239,7 @@ const PROJECTS_DATA = [
   {
     id: "03",
     slug: "hytrace",
-    displayUrl: "localhost:9002 // hytrace",
+    displayUrl: "hytrace",
     title: "HyTrace — Verified Green Hydrogen Credit Tokenization Platform",
     shortTitle: "HyTrace",
     category: "Distributed Systems & Web3",

@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="browser-dot dot-red"></span>
                 <span class="browser-dot dot-yellow"></span>
                 <span class="browser-dot dot-green"></span>
-                <span class="browser-address">${project.displayUrl || ('localhost:8080 // ' + project.slug)}</span>
+                <span class="browser-address">${project.displayUrl || project.slug}</span>
               </div>
               <img 
                 src="${project.image}" 
