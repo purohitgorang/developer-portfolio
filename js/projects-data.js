@@ -43,7 +43,7 @@ const PROJECTS_DATA = [
     highlights: [
       "Measured hardware latency: 14.8 ms (~67 FPS) on NVIDIA GTX 1650 (CUDA) and 42.1 ms on Intel i7 CPU fallback.",
       "100% precision across 16-sample benchmark (8 multi-rotor/FPV drone targets, 8 wildlife and aviation distractors).",
-      "Presentation Attack Detection (PAD) using Moiré FFT frequency analysis and Laplacian variance to reject screen replays.",
+      "Presentation Attack Defense (PAD) using dual-head spatial bounding-box suppression to detect and reject screen and monitor replays.",
       "Air-gapped edge architecture with zero cloud egress, zero external API keys, and local SQLite/JSON incident telemetry."
     ],
     problemStatement: "Securing airspaces against unauthorized drone incursions requires reliable on-device processing. Cloud-based video APIs introduce high latency and require active internet connectivity that fails in air-gapped or field tactical defense perimeters.",
@@ -114,7 +114,7 @@ const PROJECTS_DATA = [
       "Measured ~35 ms edge CPU verification latency with O(1) 1-to-1 cosine distance thresholding (0.365 cutoff).",
       "100% impostor rejection across 15 real-world edge tests (stranger video playback, synthetic blur, and extreme exposure).",
       "Mirror-aware nose-to-eye geometric pose symmetry gating before active eye-blink liveness state machine activates.",
-      "Zero raw image storage: Only irreversible 128-d floating-point ONNX vector embeddings retained with append-only audit logging."
+      "Privacy-first biometric storage: In-memory 128-d SFace ONNX embedding verification with zero raw template retention (cropped display thumbnail only)."
     ],
     problemStatement: "Biometric attendance systems frequently rely on cloud APIs or heavy proprietary SDKs that fail on commodity hardware, present security risks via 2D photograph spoofing, and violate privacy mandates by storing unencrypted face photos on database servers.",
     solution: "Engineered a pure Python Flask + OpenCV system utilizing 5-point YuNet landmark detection and 128-dimensional SFace embeddings. Built an active blink-based liveness verification pipeline that requires a genuine human blink before executing cosine similarity matching, recording verified attendance in an immutable CSV audit log.",
@@ -247,13 +247,13 @@ const PROJECTS_DATA = [
     image: "images/hytrace.png",
     tags: ["Next.js 15", "Solidity ERC-721", "Google Genkit", "Tailwind CSS", "CleanTech Web3"],
     highlights: [
-      "Solidity ERC-721 smart contract architecture with irreversible on-chain token burns preventing carbon offset double-counting.",
+      "ERC-721 smart contract interface architecture designed for verifiable token lifecycle and carbon credit redemption tracking.",
       "Bridges physical-to-digital oracle trust gap via signed Modbus/MQTT plant telemetry validation (MWh vs. kg H2 produced).",
       "Google Genkit AI flows automate compliance document auditing and renewable grid origin certificate cross-checks.",
       "Decoupled client-side Web3 wallet state eliminating Next.js 15 App Router server-side hydration collisions."
     ],
     problemStatement: "Green hydrogen trading markets suffer from certificate double-counting, lack of producer origin verification, and slow manual auditing of power plant telemetry logs, opening the door to corporate greenwashing.",
-    solution: "Architected a decentralized verification and trading protocol pairing ERC-721 immutable tokens with Google Genkit automated telemetry audit flows. Enforces irreversible on-chain token burns upon credit redemption, ensuring every MWh offset is permanently retired.",
+    solution: "Architected a decentralized verification and trading protocol pairing ERC-721 token interfaces with Google Genkit automated telemetry audit flows, simulating physical-to-digital validation to ensure offset credits are retired upon redemption.",
     gitLink: "https://github.com/purohitgorang/hytrace-marketplace",
     diagramSvg: `
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
@@ -323,7 +323,8 @@ const PROJECTS_DATA = [
     ],
     problemStatement: "Bluestar Employment Solutions Private Limited needed a high-performance web platform to showcase vetted talent and live job openings. Dynamic CMS alternatives (such as WordPress) introduce ongoing hosting costs, slow mobile load times, and vulnerabilities like SQL injection and plugin CVEs.",
     solution: "Architected and deployed a hardened Jamstack web platform on global edge CDN nodes. Integrated a headless Google Sheets database pipeline via Google Apps Script that serves sanitized data feeds directly to lightweight client browsers, delivering high reliability with zero database attack surface.",
-    gitLink: "https://github.com/purohitgorang/bluestar-employment",
+    gitLink: null,
+    liveUrl: "https://bluestaremployment.com",
     diagramSvg: `
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <defs>

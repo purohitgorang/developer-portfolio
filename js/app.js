@@ -79,9 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
                   Live Website ↗
                 </a>
               ` : ''}
-              <a href="${project.gitLink}" target="_blank" rel="noopener noreferrer" class="btn-card-github" onclick="event.stopPropagation()">
-                GitHub ↗
-              </a>
+              ${project.gitLink ? `
+                <a href="${project.gitLink}" target="_blank" rel="noopener noreferrer" class="btn-card-github" onclick="event.stopPropagation()">
+                  GitHub ↗
+                </a>
+              ` : `
+                <span class="btn-card-github" style="cursor: default; opacity: 0.85; border-style: dashed; font-size: 0.82rem;" onclick="event.stopPropagation()">
+                  Client IP (Private)
+                </span>
+              `}
             </div>
           </div>
         </article>
@@ -169,15 +175,24 @@ document.addEventListener('DOMContentLoaded', () => {
               </ul>
             </div>
 
-            <!-- Reproducible Git Clone Box -->
+            <!-- Reproducible Git Clone / Live Platform Box -->
             <div class="modal-clone-row">
-              <span class="clone-code">git clone ${project.gitLink}.git</span>
-              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                ${project.liveUrl ? `
-                  <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-copy-clone" style="text-decoration: none; background: #BAE6FD;">Live Website ↗</a>
-                ` : ''}
-                <button class="btn-copy-clone" id="copyGitBtn">Copy Command 📋</button>
-              </div>
+              ${project.gitLink ? `
+                <span class="clone-code">git clone ${project.gitLink}.git</span>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                  ${project.liveUrl ? `
+                    <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-copy-clone" style="text-decoration: none; background: #BAE6FD;">Live Website ↗</a>
+                  ` : ''}
+                  <button class="btn-copy-clone" id="copyGitBtn">Copy Command 📋</button>
+                </div>
+              ` : `
+                <span class="clone-code" style="color: #64748B;">Client Confidential / Production Deployment (Proprietary)</span>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                  ${project.liveUrl ? `
+                    <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-copy-clone" style="text-decoration: none; background: #BAE6FD; color: #0369A1; font-weight: 700;">Visit Live Platform ↗</a>
+                  ` : ''}
+                </div>
+              `}
             </div>
           </div>
         </div>
