@@ -22,10 +22,57 @@ const OPERATOR_PROFILE = {
     x: "https://x.com/GorangPurohit",
     email: "gorangpurohit@gmail.com"
   },
+  skillCategories: [
+    {
+      category: "AI & Computer Vision",
+      tag: "Core Focus",
+      color: "var(--pastel-yellow)",
+      skills: [
+        "PyTorch (CUDA)",
+        "YOLOv8 (Object Detection)",
+        "OpenCV (DNN & YuNet)",
+        "SFace (128-d Embeddings)",
+        "ONNX Runtime (Edge AI)",
+        "MediaPipe (FaceMesh & BlazePose)",
+        "Anti-Spoofing & Liveness (PAD)",
+        "Real-Time Inference (~14.8ms)",
+        "Gemini API & Genkit"
+      ]
+    },
+    {
+      category: "Applied ML & Signal Processing",
+      tag: "Anomaly & DSP",
+      color: "var(--pastel-blue)",
+      skills: [
+        "Scikit-Learn",
+        "Isolation Forest (Anomaly Detection)",
+        "Random Forest Classifiers",
+        "Audio DSP (MFCCs & Prosody)",
+        "Multimodal Sensor Fusion",
+        "Vector Embeddings & Cosine Distance"
+      ]
+    },
+    {
+      category: "Backend, Systems & Security",
+      tag: "Infrastructure",
+      color: "var(--pastel-green)",
+      skills: [
+        "Python (FastAPI, Flask)",
+        "WebSockets (Live Telemetry)",
+        "Scapy (Custom Frame Crafting)",
+        "Wireshark (PCAP Analysis)",
+        "Network Protocols (TCP/IP, OSI)",
+        "Linux (Ubuntu, Kali)",
+        "Docker Containerization",
+        "REST APIs & Microservices"
+      ]
+    }
+  ],
   skills: [
-    "Python", "PyTorch", "OpenCV", "YOLOv8", "Computer Vision", 
-    "FastAPI", "Flask", "Scapy", "Wireshark", "Network Protocols (TCP/IP, OSI)",
-    "Linux (Ubuntu, Kali)", "Docker", "Next.js", "WebSockets", "Solidity"
+    "PyTorch (CUDA)", "YOLOv8", "OpenCV", "YuNet Face Detection", "SFace 128-d Embeddings", 
+    "ONNX Runtime", "Computer Vision", "Anti-Spoofing / PAD", "MediaPipe", "Scikit-Learn", 
+    "Isolation Forest", "Audio DSP", "FastAPI", "Flask", "Python", "WebSockets", 
+    "Scapy", "Wireshark", "Network Protocols (TCP/IP, OSI)", "Linux (Ubuntu, Kali)", "Docker"
   ]
 };
 

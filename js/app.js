@@ -6,12 +6,35 @@
 document.addEventListener('DOMContentLoaded', () => {
   const modalContainer = document.getElementById('modalContainer');
 
-  // 1. Render Skills in About Section
+  // 1. Render Skills in About Section with Deep AI & Vision Focus
   const skillsContainer = document.getElementById('skillsContainer');
   if (skillsContainer && typeof OPERATOR_PROFILE !== 'undefined') {
-    skillsContainer.innerHTML = OPERATOR_PROFILE.skills.map(skill => `
-      <span class="skill-tag-pill">${skill}</span>
-    `).join('');
+    if (OPERATOR_PROFILE.skillCategories) {
+      skillsContainer.innerHTML = OPERATOR_PROFILE.skillCategories.map(group => `
+        <div class="skill-category-block" style="margin-bottom: 1.35rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+            <div style="display: flex; align-items: center; gap: 0.45rem;">
+              <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: ${group.color}; border: 1.5px solid var(--ink-primary);"></span>
+              <h4 style="font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; color: var(--ink-primary); margin: 0;">
+                ${group.category}
+              </h4>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--ink-muted); text-transform: uppercase;">
+              ${group.tag}
+            </span>
+          </div>
+          <div class="skills-badge-wrap" style="margin-top: 0; gap: 0.45rem;">
+            ${group.skills.map(s => `
+              <span class="skill-tag-pill" style="font-size: 0.78rem; padding: 0.3rem 0.65rem;">${s}</span>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    } else {
+      skillsContainer.innerHTML = OPERATOR_PROFILE.skills.map(skill => `
+        <span class="skill-tag-pill">${skill}</span>
+      `).join('');
+    }
   }
 
   // Tint mapping for project media frames
