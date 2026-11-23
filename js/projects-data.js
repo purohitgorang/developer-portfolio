@@ -101,23 +101,94 @@ const PROJECTS_DATA = [
     `
   },
   {
+    id: "05",
+    slug: "bluestar-employment",
+    displayUrl: "bluestaremployment.com",
+    liveUrl: "https://bluestaremployment.com/",
+    title: "Bluestar Employment Solutions — Enterprise Staffing Platform",
+    shortTitle: "Bluestar Employment",
+    category: "Distributed Web & Systems",
+    summary: "Production enterprise recruitment and staffing platform connecting qualified professionals with India's leading employers in Healthcare, Hospitality, FMCG, and Aviation.",
+    image: "images/bluestar-employment.png",
+    tags: ["Jamstack", "Netlify Edge CDN", "Vanilla JS", "Headless Google Sheets", "Zero OpEx"],
+    highlights: [
+      "Live production deployment at bluestaremployment.com serving multi-sector recruitment across India.",
+      "Automated headless Google Sheets database allowing HR staff to publish job listings without code.",
+      "Google Apps Script serverless form processing with automated recruiter email notifications.",
+      "Hardened Jamstack architecture cached across global Edge CDN nodes with zero recurring server maintenance cost."
+    ],
+    problemStatement: "Bluestar Employment Solutions Private Limited needed a high-performance web platform to showcase vetted talent and live job openings. Dynamic CMS alternatives (such as WordPress) introduce ongoing hosting costs, slow mobile load times, and vulnerabilities like SQL injection and plugin CVEs.",
+    solution: "Architected and deployed a hardened Jamstack web platform on global edge CDN nodes. Integrated a headless Google Sheets database pipeline via Google Apps Script that serves sanitized data feeds directly to lightweight client browsers, delivering high reliability with zero database attack surface.",
+    gitLink: null,
+    liveUrl: "https://bluestaremployment.com",
+    diagramSvg: `
+      <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr5" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+          </marker>
+        </defs>
+        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+        
+        <!-- 1. Google Sheets Input -->
+        <rect x="20" y="70" width="130" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="85" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Google Sheets CMS</text>
+        <text x="85" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Recruiter Job Postings</text>
+        <text x="85" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Zero Tech Overhead</text>
+
+        <!-- Arrow 1 -> 2 -->
+        <line x1="150" y1="107" x2="195" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr5)"/>
+        <text x="172" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Webhook</text>
+
+        <!-- 2. Apps Script ETL -->
+        <rect x="200" y="60" width="150" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="275" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Apps Script Form Handler</text>
+        <text x="275" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">Data Sanitization</text>
+        <text x="275" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#64748B">Email Notifications</text>
+        <text x="275" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Zero SQL Injection</text>
+
+        <!-- Arrow 2 -> 3 -->
+        <line x1="350" y1="107" x2="395" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr5)"/>
+        <text x="372" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Deploy</text>
+
+        <!-- 3. Netlify Edge CDN -->
+        <rect x="400" y="60" width="160" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
+        <text x="480" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">Global Edge CDN</text>
+        <text x="480" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">Static Pre-rendering</text>
+        <text x="480" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">High Availability</text>
+        <text x="480" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">Zero OpEx</text>
+
+        <!-- Arrow 3 -> 4 -->
+        <line x1="560" y1="107" x2="605" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr5)"/>
+        <text x="582" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">HTTP</text>
+
+        <!-- 4. Client Browser -->
+        <rect x="610" y="70" width="130" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">bluestaremployment.com</text>
+        <text x="675" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Candidate Portal</text>
+        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Vanilla JS Engine</text>
+      </svg>
+    `
+  },
+  {
     id: "01",
     slug: "face-detection-v2",
     displayUrl: "face-detection-v2",
-    title: "Face Detection v2 — Offline Biometric Verification Portal",
-    shortTitle: "Face Detection v2",
-    category: "Computer Vision & Security",
-    summary: "1-to-1 biometric facial authentication and active eye-blink liveness verification portal running offline on CPU, matching 128-d vector embeddings without storing raw employee photos.",
+    title: "Biometric Attendance System for ERP — On-Device Face Recognition & Liveness",
+    shortTitle: "Biometric Attendance for ERP",
+    category: "Enterprise AI & Computer Vision",
+    summary: "Enterprise biometric attendance engine engineered during my Software/AI internship at Acespritech Solutions. Packaged as a deployable module integrated directly with Odoo ERP (hr.attendance) using on-device YuNet landmark detection, 128-d SFace embeddings, and active eye-blink verification with sub-35ms inference.",
     image: "images/face-detection-v2.png",
-    tags: ["Flask", "OpenCV ONNX", "YuNet", "SFace 128-d", "Liveness Detection", "GDPR Safe"],
+    tags: ["Python", "Flask", "OpenCV", "ONNX (YuNet, SFace)", "Odoo ERP", "Acespritech Internship"],
     highlights: [
-      "Measured ~35 ms edge CPU verification latency with O(1) 1-to-1 cosine distance thresholding (0.365 cutoff).",
-      "100% impostor rejection across 15 real-world edge tests (stranger video playback, synthetic blur, and extreme exposure).",
-      "Mirror-aware nose-to-eye geometric pose symmetry gating before active eye-blink liveness state machine activates.",
-      "Privacy-first biometric storage: In-memory 128-d SFace ONNX embedding verification with zero raw template retention (cropped display thumbnail only)."
+      "Engineered during Software/AI internship at Acespritech Solutions as a deployable face attendance module for Odoo ERP (hr.attendance).",
+      "Sub-35 ms on-device CPU verification latency using 5-point YuNet detection and 128-d SFace embeddings with O(1) 1-to-1 cosine distance thresholding.",
+      "100% impostor rejection across 15 real-world edge tests (stranger video playback, synthetic blur, and extreme lighting).",
+      "Active eye-blink liveness verification and mirror-aware nose-to-eye pose symmetry gating, neutralizing photographic and video replay spoofing.",
+      "In-memory biometric vector matching: 128-d ONNX embeddings used for authentication with zero biometric template reconstruction risk."
     ],
-    problemStatement: "Biometric attendance systems frequently rely on cloud APIs or heavy proprietary SDKs that fail on commodity hardware, present security risks via 2D photograph spoofing, and violate privacy mandates by storing unencrypted face photos on database servers.",
-    solution: "Engineered a pure Python Flask + OpenCV system utilizing 5-point YuNet landmark detection and 128-dimensional SFace embeddings. Built an active blink-based liveness verification pipeline that requires a genuine human blink before executing cosine similarity matching, recording verified attendance in an immutable CSV audit log.",
+    problemStatement: "Enterprise attendance workflows in ERPs like Odoo face buddy-punching, unverified proxy clock-ins, and high costs from proprietary biometric hardware that depend on slow, privacy-sensitive cloud APIs.",
+    solution: "Developed an edge-native biometric verification pipeline during my internship at Acespritech Solutions, specifically tailored for Odoo ERP. Users verify via active eye-blink liveness and 128-dimensional SFace embeddings, logging authenticated timestamps directly into Odoo's hr.attendance model in sub-35ms with zero cloud dependencies.",
     gitLink: "https://github.com/purohitgorang/face-detection-biometrics",
     diagramSvg: `
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
@@ -163,8 +234,8 @@ const PROJECTS_DATA = [
         <!-- 4. Storage & Audit -->
         <rect x="590" y="70" width="150" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
         <text x="665" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Audit & Attendance</text>
-        <text x="665" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">attendance.csv</text>
-        <text x="665" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Verified Entry Logged</text>
+        <text x="665" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">attendance.csv / Odoo ERP</text>
+        <text x="665" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">hr.attendance Sync</text>
       </svg>
     `
   },
@@ -301,76 +372,6 @@ const PROJECTS_DATA = [
         <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Next.js 15 P2P</text>
         <text x="675" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Port 9002 Trading</text>
         <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Zero Broker Markup</text>
-      </svg>
-    `
-  },
-  {
-    id: "05",
-    slug: "bluestar-employment",
-    displayUrl: "bluestaremployment.com",
-    liveUrl: "https://bluestaremployment.com/",
-    title: "Bluestar Employment Solutions — Enterprise Staffing Platform",
-    shortTitle: "Bluestar Employment",
-    category: "Distributed Web & Systems",
-    summary: "Production enterprise recruitment and staffing platform connecting qualified professionals with India's leading employers in Healthcare, Hospitality, FMCG, and Aviation.",
-    image: "images/bluestar-employment.png",
-    tags: ["Jamstack", "Netlify Edge CDN", "Vanilla JS", "Headless Google Sheets", "Zero OpEx"],
-    highlights: [
-      "Live production deployment at bluestaremployment.com serving multi-sector recruitment across India.",
-      "Automated headless Google Sheets database allowing HR staff to publish job listings without code.",
-      "Google Apps Script serverless form processing with automated recruiter email notifications.",
-      "Hardened Jamstack architecture cached across global Edge CDN nodes with zero recurring server maintenance cost."
-    ],
-    problemStatement: "Bluestar Employment Solutions Private Limited needed a high-performance web platform to showcase vetted talent and live job openings. Dynamic CMS alternatives (such as WordPress) introduce ongoing hosting costs, slow mobile load times, and vulnerabilities like SQL injection and plugin CVEs.",
-    solution: "Architected and deployed a hardened Jamstack web platform on global edge CDN nodes. Integrated a headless Google Sheets database pipeline via Google Apps Script that serves sanitized data feeds directly to lightweight client browsers, delivering high reliability with zero database attack surface.",
-    gitLink: null,
-    liveUrl: "https://bluestaremployment.com",
-    diagramSvg: `
-      <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <marker id="arr5" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
-          </marker>
-        </defs>
-        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
-        
-        <!-- 1. Google Sheets Input -->
-        <rect x="20" y="70" width="130" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="85" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Google Sheets CMS</text>
-        <text x="85" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Recruiter Job Postings</text>
-        <text x="85" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Zero Tech Overhead</text>
-
-        <!-- Arrow 1 -> 2 -->
-        <line x1="150" y1="107" x2="195" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr5)"/>
-        <text x="172" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Webhook</text>
-
-        <!-- 2. Apps Script ETL -->
-        <rect x="200" y="60" width="150" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="275" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Apps Script Form Handler</text>
-        <text x="275" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">Data Sanitization</text>
-        <text x="275" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#64748B">Email Notifications</text>
-        <text x="275" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Zero SQL Injection</text>
-
-        <!-- Arrow 2 -> 3 -->
-        <line x1="350" y1="107" x2="395" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr5)"/>
-        <text x="372" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Deploy</text>
-
-        <!-- 3. Netlify Edge CDN -->
-        <rect x="400" y="60" width="160" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
-        <text x="480" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">Global Edge CDN</text>
-        <text x="480" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">Static Pre-rendering</text>
-        <text x="480" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">High Availability</text>
-        <text x="480" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">Zero OpEx</text>
-
-        <!-- Arrow 3 -> 4 -->
-        <line x1="560" y1="107" x2="605" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr5)"/>
-        <text x="582" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">HTTP</text>
-
-        <!-- 4. Client Browser -->
-        <rect x="610" y="70" width="130" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">bluestaremployment.com</text>
-        <text x="675" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Candidate Portal</text>
-        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Vanilla JS Engine</text>
       </svg>
     `
   }
