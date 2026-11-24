@@ -85,7 +85,7 @@ const PROJECTS_DATA = [
     shortTitle: "Drone Hawk X",
     category: "Perimeter Defense & Computer Vision",
     summary: "Airspace perimeter security system engineered to detect unauthorized low-altitude drones and multi-rotors in real-time. Protects sensitive perimeters against aerial intrusions and spoofing attacks, operating entirely on-premise without cloud latency or internet connectivity.",
-    image: "images/drone-hawk-x.png",
+    image: "images/drone-hawk-x-glass.png?v=3.0",
     tags: ["Perimeter Defense", "Edge Vision", "Air-Gapped", "FastAPI", "React 19", "PyTorch"],
     highlights: [
       "Low-Altitude Airspace Defense: Detects incoming commercial drones and multi-rotors where radar has blind spots, differentiating aerial threats from birds and aircraft.",
