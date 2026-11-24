@@ -1631,56 +1631,7 @@ body {
   color: #14532D;
 }
 
-/* Consulting & Stakeholder Competencies Grid */
-.consulting-box {
-  background-color: #FFFFFF;
-  border: var(--border-heavy);
-  box-shadow: var(--shadow-hard);
-  border-radius: var(--radius-md);
-  padding: 1.75rem;
-}
-
-.consulting-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-}
-
-.consulting-item {
-  background-color: #F8FAFC;
-  border: 2px solid var(--ink-primary);
-  border-radius: var(--radius-sm);
-  padding: 1.2rem;
-  box-shadow: var(--shadow-hard-sm);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.consulting-item:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-hard-md);
-  background-color: #FFFFFF;
-}
-
-.consulting-title {
-  font-family: var(--font-display);
-  font-size: 0.98rem;
-  font-weight: 800;
-  color: var(--ink-primary);
-  margin-bottom: 0.5rem;
-}
-
-.consulting-desc {
-  font-family: var(--font-sans);
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: var(--ink-secondary);
-  margin: 0;
-}
-
 @media (max-width: 768px) {
-  .consulting-grid {
-    grid-template-columns: 1fr;
-  }
   .btn-nav-resume {
     padding: 0 0.85rem;
     font-size: 0.8rem;
