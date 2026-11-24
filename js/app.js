@@ -78,6 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- Right: Technical Details & Case Study Information -->
           <div class="project-content-col">
             <div>
+              ${project.classification ? `
+                <div class="project-classification-badge ${project.classificationClass || ''}">
+                  <span class="classification-badge-icon">${project.classificationIcon || '✦'}</span>
+                  <span class="classification-badge-text">${project.classification}</span>
+                </div>
+              ` : ''}
+
               <div class="project-tags-row">
                 <span class="neo-tag ${mainTagColor}">${project.category}</span>
                 ${project.tags.slice(0, 3).map((tag, tIdx) => `
@@ -151,6 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="modal-window" onclick="event.stopPropagation()">
           <div class="modal-header">
             <div class="modal-title-group">
+              ${project.classification ? `
+                <div class="project-classification-badge ${project.classificationClass || ''}" style="margin-bottom: 0.45rem;">
+                  <span class="classification-badge-icon">${project.classificationIcon || '✦'}</span>
+                  <span class="classification-badge-text">${project.classification}</span>
+                </div>
+              ` : ''}
               <span class="modal-category-label">${project.category}</span>
               <h3>${project.title}</h3>
             </div>

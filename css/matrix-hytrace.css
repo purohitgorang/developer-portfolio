@@ -1484,3 +1484,204 @@ body {
     width: 100%;
   }
 }
+
+
+/* =============================================================================
+   Added: Resume Navigation, Verified Credentials & Project Separation Badges
+   ============================================================================= */
+
+.btn-nav-resume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  height: 100%;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--ink-primary);
+  background-color: var(--pastel-yellow);
+  border-right: var(--border-main);
+  transition: all 0.15s ease;
+}
+
+.btn-nav-resume:hover {
+  background-color: #FDE047;
+}
+
+.btn-brutal-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--pastel-yellow);
+  color: var(--ink-primary);
+  border: var(--border-main);
+  padding: 0.95rem 1.85rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-hard-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-brutal-resume:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard-lg);
+  background-color: #FDE047;
+}
+
+.btn-brutal-resume:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--ink-primary);
+}
+
+/* Hero Dev Pass Credentials Section */
+.dev-pass-credentials-section {
+  border-top: var(--border-thin);
+  padding-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dev-pass-creds-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cred-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--ink-secondary);
+}
+
+.cred-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cred-dot.dot-blue { background-color: #2563EB; }
+.cred-dot.dot-green { background-color: #10B981; }
+.cred-dot.dot-yellow { background-color: #F59E0B; }
+
+.cred-text {
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.cred-text strong {
+  color: var(--ink-primary);
+  font-weight: 700;
+}
+
+/* Project Separation / Classification Badges */
+.project-classification-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+  border: 1.5px solid var(--ink-primary);
+  box-shadow: 2px 2px 0px var(--ink-primary);
+}
+
+.badge-enterprise {
+  background-color: #FEF08A;
+  color: #713F12;
+}
+
+.badge-commercial {
+  background-color: #BAE6FD;
+  color: #0369A1;
+}
+
+.badge-defense {
+  background-color: #FED7AA;
+  color: #9A3412;
+}
+
+.badge-telemetry {
+  background-color: #E9D5FF;
+  color: #581C87;
+}
+
+.badge-cleantech {
+  background-color: #BBF7D0;
+  color: #14532D;
+}
+
+/* Consulting & Stakeholder Competencies Grid */
+.consulting-box {
+  background-color: #FFFFFF;
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-hard);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+}
+
+.consulting-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.consulting-item {
+  background-color: #F8FAFC;
+  border: 2px solid var(--ink-primary);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem;
+  box-shadow: var(--shadow-hard-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.consulting-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard-md);
+  background-color: #FFFFFF;
+}
+
+.consulting-title {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+  margin-bottom: 0.5rem;
+}
+
+.consulting-desc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--ink-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .consulting-grid {
+    grid-template-columns: 1fr;
+  }
+  .btn-nav-resume {
+    padding: 0 0.85rem;
+    font-size: 0.8rem;
+  }
+}

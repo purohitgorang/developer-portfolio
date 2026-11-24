@@ -20,7 +20,8 @@ const OPERATOR_PROFILE = {
     github: "https://github.com/purohitgorang",
     linkedin: "https://linkedin.com/in/gorangpurohit",
     x: "https://x.com/GorangPurohit",
-    email: "gorangpurohit@gmail.com"
+    email: "gorangpurohit@gmail.com",
+    resume: "Gorang_Purohit_Resume.pdf"
   },
   skillCategories: [
     {
@@ -77,82 +78,87 @@ const OPERATOR_PROFILE = {
 };
 
 const PROJECTS_DATA = [
+  // 1st: Biometric Attendance System for ERP (Acespritech Internship / Odoo ERP)
   {
-    id: "04",
-    slug: "dronewatch",
-    displayUrl: "dronewatch",
-    title: "Drone Hawk X — C-UAS Drone Detection & Surveillance Platform",
-    shortTitle: "Drone Hawk X",
-    category: "Perimeter Defense & Computer Vision",
-    summary: "Airspace perimeter security system engineered to detect unauthorized low-altitude drones and multi-rotors in real-time. Protects sensitive perimeters against aerial intrusions and spoofing attacks, operating entirely on-premise without cloud latency or internet connectivity.",
-    image: "images/drone-hawk-x-glass.png?v=3.0",
-    tags: ["Perimeter Defense", "Edge Vision", "Air-Gapped", "FastAPI", "React 19", "PyTorch"],
+    id: "01",
+    slug: "face-detection-v2",
+    displayUrl: "face-detection-v2",
+    title: "Biometric Attendance System for ERP — On-Device Face Recognition & Liveness",
+    shortTitle: "Biometric Attendance for ERP",
+    classification: "Enterprise Internship Deliverable — Acespritech Solutions (Odoo ERP)",
+    classificationIcon: "🏢",
+    classificationClass: "badge-enterprise",
+    category: "Enterprise Systems & Computer Vision",
+    summary: "Enterprise biometric attendance engine engineered during my Software/AI internship at Acespritech Solutions. Packaged as a deployable module integrated directly with Odoo ERP (hr.attendance) using on-device YuNet landmark detection, 128-d SFace embeddings, and active eye-blink verification with sub-35ms inference.",
+    image: "images/face-detection-v2.png",
+    tags: ["Odoo ERP", "Workforce Verification", "Anti-Spoofing", "Python", "OpenCV", "Acespritech"],
     highlights: [
-      "Low-Altitude Airspace Defense: Detects incoming commercial drones and multi-rotors where radar has blind spots, differentiating aerial threats from birds and aircraft.",
-      "Zero-Cloud Air-Gapped Operation: Engineered for sensitive facilities and defense perimeters—operates 100% offline with zero internet requirement and zero data leakage.",
-      "Screen & Replay Attack Defense: Prevents security evasion by identifying and rejecting monitor replays, projected images, and synthetic video feeds.",
-      "Instant Threat Telemetry: Delivers real-time intrusion alerts and coordinate tracking directly to on-duty security personnel without third-party vendor dependencies."
+      "Engineered during Software/AI internship at Acespritech Solutions as a deployable face attendance module for Odoo ERP (hr.attendance).",
+      "Sub-35 ms on-device CPU verification latency using 5-point YuNet detection and 128-d SFace embeddings with O(1) 1-to-1 cosine distance thresholding.",
+      "100% impostor rejection across 15 real-world edge tests (stranger video playback, synthetic blur, and extreme lighting).",
+      "Active eye-blink liveness verification and mirror-aware nose-to-eye pose symmetry gating, neutralizing photographic and video replay spoofing.",
+      "In-memory biometric vector matching: 128-d ONNX embeddings used for authentication with zero biometric template reconstruction risk."
     ],
-    problemStatement: "Securing airspaces against unauthorized commercial drone incursions requires instant, reliable detection. Traditional radar systems struggle with low-altitude micro-drones, while cloud-based computer vision APIs introduce high latency, require constant internet connectivity that fails in field environments, and introduce critical data privacy risks in secured facilities.",
-    solution: "Architected a zero-cloud, 100% offline perimeter defense system. Video streams from optical cameras are ingested locally and processed through a drone-specialized neural network running directly on local hardware. A high-throughput FastAPI backend processes live frames and broadcasts real-time threat bounding boxes and incident telemetry to a tactical React 19 operator HUD.",
+    problemStatement: "Enterprises running Odoo ERP lose substantial payroll budget to 'buddy-punching' (coworkers clocking in for absent colleagues) and unverified remote attendance. Furthermore, proprietary biometric fingerprint scanners require expensive hardware leases, fail under humid or worn finger conditions, and cloud facial recognition services raise severe data compliance and employee privacy concerns.",
+    solution: "Engineered an edge-native biometric verification module during my Software/AI internship at Acespritech Solutions, specifically tailored for Odoo ERP. Using standard office webcams, the system performs fast on-device face detection, verifies natural eye-blink liveness, converts facial features into encrypted 128-dimensional vectors, and commits authenticated check-in timestamps directly into Odoo's hr.attendance model in sub-35ms with zero external cloud dependencies.",
     systemDesignSpecs: [
-      "Hardware Latency: 14.8 ms (~67 FPS) CUDA inference on NVIDIA GTX 1650; 42.1 ms CPU fallback on Intel i7.",
-      "Benchmark Validation: 100% precision across 16-sample evaluation benchmark (8 multi-rotor/FPV drone targets, 8 environmental and aviation distractors).",
-      "Presentation Attack Defense (PAD): Dual-head spatial bounding-box suppression algorithm detecting display bezels, refresh rate anomalies, and screen replays.",
-      "Zero-Egress Data Architecture: Local SQLite/JSON incident telemetry with zero external network packets and zero remote API keys."
+      "On-Device Verification Latency: Sub-35 ms execution on standard office CPU hardware without requiring expensive dedicated GPUs.",
+      "Neural Feature Alignment: 5-point facial landmark detection via lightweight YuNet DNN coupled with 128-dimensional SFace feature embeddings.",
+      "Liveness & Anti-Spoofing Algorithm: Dynamic eye-aspect-ratio (EAR) blink gating and nose-to-eye pose symmetry analysis neutralizing 2D photo and screen replays.",
+      "Privacy-Preserving Vector Matching: O(1) 1-to-1 cosine distance thresholding (similarity threshold >= 0.363); raw facial imagery is wiped immediately from memory post-verification."
     ],
-    gitLink: "https://github.com/purohitgorang/dronewatch-surveillance",
+    gitLink: "https://github.com/purohitgorang/face-detection-biometrics",
     diagramSvg: `
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <marker id="arr2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
           </marker>
         </defs>
-        <!-- Background Card -->
         <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
         
-        <!-- Nodes -->
-        <!-- 1. Video Input -->
-        <rect x="20" y="70" width="125" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="82" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Optical Camera Feed</text>
-        <text x="82" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Webcam / Snapshot</text>
-        <text x="82" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">● Live Stream</text>
+        <!-- 1. Video Ingest -->
+        <rect x="20" y="70" width="120" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="80" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Webcam Feed</text>
+        <text x="80" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Flask Port 5000</text>
+        <text x="80" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">1-to-1 Match Mode</text>
 
         <!-- Arrow 1 -> 2 -->
-        <line x1="145" y1="107" x2="190" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr)"/>
-        <text x="167" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Frames</text>
+        <line x1="140" y1="107" x2="185" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr2)"/>
+        <text x="162" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Frames</text>
 
-        <!-- 2. FastAPI Backend -->
-        <rect x="195" y="60" width="150" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="270" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">FastAPI Server</text>
-        <text x="270" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">Port 8000 /detect</text>
-        <text x="270" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#64748B">In-Memory Buffer</text>
-        <text x="270" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Zero Cloud Egress</text>
+        <!-- 2. Liveness & Detection -->
+        <rect x="190" y="60" width="150" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="265" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">YuNet + Blink Check</text>
+        <text x="265" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">Haar Eye Detection</text>
+        <text x="265" y="122" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">5-Point Alignment</text>
+        <text x="265" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Anti-Spoof Verified</text>
 
         <!-- Arrow 2 -> 3 -->
-        <line x1="345" y1="107" x2="390" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr)"/>
-        <text x="367" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">VRAM</text>
+        <line x1="340" y1="107" x2="385" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr2)"/>
+        <text x="362" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Crop</text>
 
-        <!-- 3. Local YOLOv8 Engine -->
-        <rect x="395" y="60" width="160" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
-        <text x="475" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">YOLOv8 Aerial Vision</text>
-        <text x="475" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">PyTorch CUDA / CPU</text>
-        <text x="475" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">drone_yolov8n.pt</text>
-        <text x="475" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">100% Offline</text>
+        <!-- 3. SFace Vector -->
+        <rect x="390" y="60" width="150" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
+        <text x="465" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">SFace Embedding</text>
+        <text x="465" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">128-d Vector</text>
+        <text x="465" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">Cosine Sim &gt;= 0.363</text>
+        <text x="465" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">Photos Discarded</text>
 
         <!-- Arrow 3 -> 4 -->
-        <line x1="555" y1="107" x2="600" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr)"/>
-        <text x="577" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">HUD Boxes</text>
+        <line x1="540" y1="107" x2="585" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr2)"/>
+        <text x="562" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Auth</text>
 
-        <!-- 4. UI Dashboard -->
-        <rect x="605" y="70" width="140" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">React 19 HUD UI</text>
-        <text x="675" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Vite (Port 5173)</text>
-        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#EF4444">Incident Ledger</text>
+        <!-- 4. Storage & Audit -->
+        <rect x="590" y="70" width="150" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="665" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Audit &amp; Attendance</text>
+        <text x="665" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">attendance.csv / Odoo ERP</text>
+        <text x="665" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">hr.attendance Sync</text>
       </svg>
     `
   },
+
+  // 2nd: Bluestar Employment Solutions (Commercial Client Production Deployment)
   {
     id: "05",
     slug: "bluestar-employment",
@@ -160,6 +166,9 @@ const PROJECTS_DATA = [
     liveUrl: "https://bluestaremployment.com/",
     title: "Bluestar Employment Solutions — Enterprise Staffing Platform",
     shortTitle: "Bluestar Employment",
+    classification: "Commercial Client Production Deployment — bluestaremployment.com",
+    classificationIcon: "🌐",
+    classificationClass: "badge-commercial",
     category: "Distributed Web & Systems",
     summary: "Production enterprise recruitment and staffing platform connecting qualified professionals with India's leading employers in Healthcare, Hospitality, FMCG, and Aviation.",
     image: "images/bluestar-employment.png",
@@ -229,86 +238,98 @@ const PROJECTS_DATA = [
       </svg>
     `
   },
+
+  // 3rd: Drone Hawk X (Autonomous Edge AI & Defense Architecture)
   {
-    id: "01",
-    slug: "face-detection-v2",
-    displayUrl: "face-detection-v2",
-    title: "Biometric Attendance System for ERP — On-Device Face Recognition & Liveness",
-    shortTitle: "Biometric Attendance for ERP",
-    category: "Enterprise Systems & Computer Vision",
-    summary: "Enterprise workforce verification module built during my software internship at Acespritech Solutions for Odoo ERP. Replaces costly biometric fingerprint hardware and eliminates proxy attendance ('buddy-punching') through fast on-device face verification and active liveness checks.",
-    image: "images/face-detection-v2.png",
-    tags: ["Odoo ERP", "Workforce Verification", "Anti-Spoofing", "Python", "OpenCV", "Acespritech"],
+    id: "04",
+    slug: "dronewatch",
+    displayUrl: "dronewatch",
+    title: "Drone Hawk X — C-UAS Drone Detection & Surveillance Platform",
+    shortTitle: "Drone Hawk X",
+    classification: "Autonomous Edge AI & Perimeter Defense Architecture",
+    classificationIcon: "🛡️",
+    classificationClass: "badge-defense",
+    category: "Perimeter Defense & Computer Vision",
+    summary: "Air-gapped edge computer vision system for airspace perimeter security, detecting aerial drones and multi-rotors using fine-tuned YOLOv8, PyTorch CUDA hardware acceleration, and real-time optical video feeds.",
+    image: "images/drone-hawk-x-glass.png?v=3.0",
+    tags: ["Perimeter Defense", "Edge Vision", "Air-Gapped", "FastAPI", "React 19", "PyTorch"],
     highlights: [
-      "Eliminates Proxy Clock-Ins: Solves 'buddy-punching' across enterprise teams by verifying physical employee presence in real-time before committing attendance records.",
-      "Direct Odoo ERP Integration: Built as a deployable module that synchronizes authenticated timestamps directly into Odoo's official hr.attendance records, automating payroll workflows.",
-      "Active Anti-Spoofing & Liveness: Detects natural eye blinks and facial geometry to instantly block printed photos, smartphone screens, and recorded video playback attempts.",
-      "Zero Proprietary Hardware Cost: Runs on standard office webcams and existing PCs with zero expensive hardware leases, authenticating biometric vectors in-memory without storing raw employee photos."
+      "Measured hardware latency: 14.8 ms (~67 FPS) on NVIDIA GTX 1650 (CUDA) and 42.1 ms on Intel i7 CPU fallback.",
+      "100% precision across 16-sample benchmark (8 multi-rotor/FPV drone targets, 8 wildlife and aviation distractors).",
+      "Presentation Attack Defense (PAD) using dual-head spatial bounding-box suppression to detect and reject screen and monitor replays.",
+      "Air-gapped edge architecture with zero cloud egress, zero external API keys, and local SQLite/JSON incident telemetry."
     ],
-    problemStatement: "Enterprises running Odoo ERP lose substantial payroll budget to 'buddy-punching' (coworkers clocking in for absent colleagues) and unverified remote attendance. Furthermore, proprietary biometric fingerprint scanners require expensive hardware leases, fail under humid or worn finger conditions, and cloud facial recognition services raise severe data compliance and employee privacy concerns.",
-    solution: "Engineered an edge-native biometric verification module during my Software/AI internship at Acespritech Solutions, specifically tailored for Odoo ERP. Using standard office webcams, the system performs fast on-device face detection, verifies natural eye-blink liveness, converts facial features into encrypted 128-dimensional vectors, and commits authenticated check-in timestamps directly into Odoo's hr.attendance model in sub-35ms with zero external cloud dependencies.",
+    problemStatement: "Securing airspaces against unauthorized commercial drone incursions requires instant, reliable detection. Traditional radar systems struggle with low-altitude micro-drones, while cloud-based computer vision APIs introduce high latency, require constant internet connectivity that fails in field environments, and introduce critical data privacy risks in secured facilities.",
+    solution: "Architected a zero-cloud, 100% offline perimeter defense system. Video streams from optical cameras are ingested locally and processed through a drone-specialized neural network running directly on local hardware. A high-throughput FastAPI backend processes live frames and broadcasts real-time threat bounding boxes and incident telemetry to a tactical React 19 operator HUD.",
     systemDesignSpecs: [
-      "On-Device Verification Latency: Sub-35 ms execution on standard office CPU hardware without requiring expensive dedicated GPUs.",
-      "Neural Feature Alignment: 5-point facial landmark detection via lightweight YuNet DNN coupled with 128-dimensional SFace feature embeddings.",
-      "Liveness & Anti-Spoofing Algorithm: Dynamic eye-aspect-ratio (EAR) blink gating and nose-to-eye pose symmetry analysis neutralizing 2D photo and screen replays.",
-      "Privacy-Preserving Vector Matching: O(1) 1-to-1 cosine distance thresholding (similarity threshold >= 0.363); raw facial imagery is wiped immediately from memory post-verification."
+      "Hardware Latency: 14.8 ms (~67 FPS) CUDA inference on NVIDIA GTX 1650; 42.1 ms CPU fallback on Intel i7.",
+      "Benchmark Validation: 100% precision across 16-sample evaluation benchmark (8 multi-rotor/FPV drone targets, 8 environmental and aviation distractors).",
+      "Presentation Attack Defense (PAD): Dual-head spatial bounding-box suppression algorithm detecting display bezels, refresh rate anomalies, and screen replays.",
+      "Zero-Egress Data Architecture: Local SQLite/JSON incident telemetry with zero external network packets and zero remote API keys."
     ],
-    gitLink: "https://github.com/purohitgorang/face-detection-biometrics",
+    gitLink: "https://github.com/purohitgorang/dronewatch-surveillance",
     diagramSvg: `
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <marker id="arr2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
           </marker>
         </defs>
+        <!-- Background Card -->
         <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
         
-        <!-- 1. Video Ingest -->
-        <rect x="20" y="70" width="120" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="80" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Webcam Feed</text>
-        <text x="80" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Flask Port 5000</text>
-        <text x="80" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">1-to-1 Match Mode</text>
+        <!-- Nodes -->
+        <!-- 1. Video Input -->
+        <rect x="20" y="70" width="125" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="82" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Optical Camera Feed</text>
+        <text x="82" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Webcam / Snapshot</text>
+        <text x="82" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">● Live Stream</text>
 
         <!-- Arrow 1 -> 2 -->
-        <line x1="140" y1="107" x2="185" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr2)"/>
-        <text x="162" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Frames</text>
+        <line x1="145" y1="107" x2="190" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr)"/>
+        <text x="167" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Frames</text>
 
-        <!-- 2. Liveness & Detection -->
-        <rect x="190" y="60" width="150" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="265" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">YuNet + Blink Check</text>
-        <text x="265" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">Haar Eye Detection</text>
-        <text x="265" y="122" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">5-Point Alignment</text>
-        <text x="265" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Anti-Spoof Verified</text>
+        <!-- 2. FastAPI Backend -->
+        <rect x="195" y="60" width="150" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="270" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">FastAPI Server</text>
+        <text x="270" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">Port 8000 /detect</text>
+        <text x="270" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#64748B">In-Memory Buffer</text>
+        <text x="270" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Zero Cloud Egress</text>
 
         <!-- Arrow 2 -> 3 -->
-        <line x1="340" y1="107" x2="385" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr2)"/>
-        <text x="362" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Crop</text>
+        <line x1="345" y1="107" x2="390" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr)"/>
+        <text x="367" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">VRAM</text>
 
-        <!-- 3. SFace Vector -->
-        <rect x="390" y="60" width="150" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
-        <text x="465" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">SFace Embedding</text>
-        <text x="465" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">128-d Vector</text>
-        <text x="465" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">Cosine Sim >= 0.363</text>
-        <text x="465" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">Photos Discarded</text>
+        <!-- 3. Local YOLOv8 Engine -->
+        <rect x="395" y="60" width="160" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
+        <text x="475" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">YOLOv8 Aerial Vision</text>
+        <text x="475" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">PyTorch CUDA / CPU</text>
+        <text x="475" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">drone_yolov8n.pt</text>
+        <text x="475" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">100% Offline</text>
 
         <!-- Arrow 3 -> 4 -->
-        <line x1="540" y1="107" x2="585" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr2)"/>
-        <text x="562" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Auth</text>
+        <line x1="555" y1="107" x2="600" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr)"/>
+        <text x="577" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">HUD Boxes</text>
 
-        <!-- 4. Storage & Audit -->
-        <rect x="590" y="70" width="150" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="665" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Audit & Attendance</text>
-        <text x="665" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">attendance.csv / Odoo ERP</text>
-        <text x="665" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">hr.attendance Sync</text>
+        <!-- 4. UI Dashboard -->
+        <rect x="605" y="70" width="140" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">React 19 HUD UI</text>
+        <text x="675" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Vite (Port 5173)</text>
+        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#EF4444">Incident Ledger</text>
       </svg>
     `
   },
+
+  // 4th: AuraAssess (Multimodal Telemetry & Self-Rehearsal Engine)
   {
     id: "02",
     slug: "auraassess",
     displayUrl: "auraassess",
     title: "AuraAssess — Multimodal Telemetry & Self-Rehearsal Engine",
     shortTitle: "AuraAssess",
+    classification: "Multimodal Behavioral Telemetry & Applied ML Platform",
+    classificationIcon: "🎙️",
+    classificationClass: "badge-telemetry",
     category: "Communication Telemetry & DSP",
     summary: "Interactive rehearsal sandbox designed to help technical candidates and presenters overcome speech anxiety. Provides real-time visual feedback on pacing, vocal composure, and posture dynamics in a private, non-judgmental environment.",
     image: "images/auraassess.png",
@@ -339,7 +360,7 @@ const PROJECTS_DATA = [
         
         <!-- 1. Sensor Input -->
         <rect x="20" y="70" width="130" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="85" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Webcam & Mic</text>
+        <text x="85" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Webcam &amp; Mic</text>
         <text x="85" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">30 FPS Video + Audio</text>
         <text x="85" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Candidate Stream</text>
 
@@ -377,12 +398,17 @@ const PROJECTS_DATA = [
       </svg>
     `
   },
+
+  // 5th: HyTrace (Verified Green Hydrogen Credit Tokenization Platform)
   {
     id: "03",
     slug: "hytrace",
     displayUrl: "hytrace",
     title: "HyTrace — Verified Green Hydrogen Credit Tokenization Platform",
     shortTitle: "HyTrace",
+    classification: "CleanTech Provenance & Automated Audit Infrastructure",
+    classificationIcon: "🌱",
+    classificationClass: "badge-cleantech",
     category: "CleanTech & Provenance Systems",
     summary: "CleanTech provenance platform tackling corporate greenwashing in the clean energy sector. Verifies green hydrogen production directly from power plant telemetry and permanently retires offset credits to prevent fraudulent double-counting.",
     image: "images/hytrace.png",
