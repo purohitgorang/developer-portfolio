@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <!-- Problem Statement -->
             <div>
               <h4 class="modal-section-h4">
-                <span>⚠️</span> Problem Statement
+                <span>⚠️</span> The Operational Problem It Solves
               </h4>
               <p class="modal-text">${project.problemStatement}</p>
             </div>
@@ -179,18 +179,18 @@ document.addEventListener('DOMContentLoaded', () => {
             <!-- Engineering Solution -->
             <div>
               <h4 class="modal-section-h4">
-                <span>⚙️</span> Engineering Solution
+                <span>⚙️</span> Engineering Solution & System Flow
               </h4>
               <p class="modal-text">${project.solution}</p>
             </div>
 
-            <!-- Highlights -->
+            <!-- Deep Technical Specifications & Benchmarks -->
             <div>
               <h4 class="modal-section-h4">
-                <span>✦</span> Key Architecture Highlights
+                <span>🔬</span> Deep Technical Architecture & Verified Specs
               </h4>
               <ul class="project-bullets-list" style="margin-bottom: 0;">
-                ${project.highlights.map(h => `<li>${h}</li>`).join('')}
+                ${(project.systemDesignSpecs || project.highlights).map(h => `<li>${h}</li>`).join('')}
               </ul>
             </div>
 

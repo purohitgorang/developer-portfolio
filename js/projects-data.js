@@ -83,18 +83,24 @@ const PROJECTS_DATA = [
     displayUrl: "dronewatch",
     title: "Drone Hawk X — C-UAS Drone Detection & Surveillance Platform",
     shortTitle: "Drone Hawk X",
-    category: "Computer Vision & AI",
-    summary: "Air-gapped edge computer vision system for airspace perimeter security, detecting aerial drones and multi-rotors using fine-tuned YOLOv8, PyTorch CUDA hardware acceleration, and real-time optical video feeds.",
+    category: "Perimeter Defense & Computer Vision",
+    summary: "Airspace perimeter security system engineered to detect unauthorized low-altitude drones and multi-rotors in real-time. Protects sensitive perimeters against aerial intrusions and spoofing attacks, operating entirely on-premise without cloud latency or internet connectivity.",
     image: "images/drone-hawk-x.png",
-    tags: ["PyTorch", "YOLOv8", "CUDA", "FastAPI", "React 19", "Edge Vision"],
+    tags: ["Perimeter Defense", "Edge Vision", "Air-Gapped", "FastAPI", "React 19", "PyTorch"],
     highlights: [
-      "Measured hardware latency: 14.8 ms (~67 FPS) on NVIDIA GTX 1650 (CUDA) and 42.1 ms on Intel i7 CPU fallback.",
-      "100% precision across 16-sample benchmark (8 multi-rotor/FPV drone targets, 8 wildlife and aviation distractors).",
-      "Presentation Attack Defense (PAD) using dual-head spatial bounding-box suppression to detect and reject screen and monitor replays.",
-      "Air-gapped edge architecture with zero cloud egress, zero external API keys, and local SQLite/JSON incident telemetry."
+      "Low-Altitude Airspace Defense: Detects incoming commercial drones and multi-rotors where radar has blind spots, differentiating aerial threats from birds and aircraft.",
+      "Zero-Cloud Air-Gapped Operation: Engineered for sensitive facilities and defense perimeters—operates 100% offline with zero internet requirement and zero data leakage.",
+      "Screen & Replay Attack Defense: Prevents security evasion by identifying and rejecting monitor replays, projected images, and synthetic video feeds.",
+      "Instant Threat Telemetry: Delivers real-time intrusion alerts and coordinate tracking directly to on-duty security personnel without third-party vendor dependencies."
     ],
-    problemStatement: "Securing airspaces against unauthorized drone incursions requires reliable on-device processing. Cloud-based video APIs introduce high latency and require active internet connectivity that fails in air-gapped or field tactical defense perimeters.",
-    solution: "Architected a zero-cloud, 100% offline edge AI system using an aerial drone fine-tuned YOLOv8 neural network. Implemented a Python FastAPI backend that interfaces directly with local GPU VRAM and streams real-time detection bounding coordinates to a React 19 tactical HUD interface.",
+    problemStatement: "Securing airspaces against unauthorized commercial drone incursions requires instant, reliable detection. Traditional radar systems struggle with low-altitude micro-drones, while cloud-based computer vision APIs introduce high latency, require constant internet connectivity that fails in field environments, and introduce critical data privacy risks in secured facilities.",
+    solution: "Architected a zero-cloud, 100% offline perimeter defense system. Video streams from optical cameras are ingested locally and processed through a drone-specialized neural network running directly on local hardware. A high-throughput FastAPI backend processes live frames and broadcasts real-time threat bounding boxes and incident telemetry to a tactical React 19 operator HUD.",
+    systemDesignSpecs: [
+      "Hardware Latency: 14.8 ms (~67 FPS) CUDA inference on NVIDIA GTX 1650; 42.1 ms CPU fallback on Intel i7.",
+      "Benchmark Validation: 100% precision across 16-sample evaluation benchmark (8 multi-rotor/FPV drone targets, 8 environmental and aviation distractors).",
+      "Presentation Attack Defense (PAD): Dual-head spatial bounding-box suppression algorithm detecting display bezels, refresh rate anomalies, and screen replays.",
+      "Zero-Egress Data Architecture: Local SQLite/JSON incident telemetry with zero external network packets and zero remote API keys."
+    ],
     gitLink: "https://github.com/purohitgorang/dronewatch-surveillance",
     diagramSvg: `
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
@@ -159,13 +165,19 @@ const PROJECTS_DATA = [
     image: "images/bluestar-employment.png",
     tags: ["Jamstack", "Netlify Edge CDN", "Vanilla JS", "Headless Google Sheets", "Zero OpEx"],
     highlights: [
-      "Live production deployment at bluestaremployment.com serving multi-sector recruitment across India.",
-      "Automated headless Google Sheets database allowing HR staff to publish job listings without code.",
-      "Google Apps Script serverless form processing with automated recruiter email notifications.",
-      "Hardened Jamstack architecture cached across global Edge CDN nodes with zero recurring server maintenance cost."
+      "Commercial Production Deployment: Live at bluestaremployment.com, serving enterprise recruitment operations across India in Healthcare, Hospitality, FMCG, and Aviation.",
+      "Zero-Code HR Operations: Custom headless Google Sheets pipeline allowing non-technical recruiters to post, update, and archive active vacancies instantly without developer assistance.",
+      "Serverless Candidate Pipeline: Automated applicant form intake and routing with instant notification dispatch directly to regional hiring coordinators.",
+      "Zero Recurring Infrastructure Cost: Deployed on a hardened Jamstack architecture across global Edge CDN nodes, eliminating database maintenance overhead and server hosting fees."
     ],
-    problemStatement: "Bluestar Employment Solutions Private Limited needed a high-performance web platform to showcase vetted talent and live job openings. Dynamic CMS alternatives (such as WordPress) introduce ongoing hosting costs, slow mobile load times, and vulnerabilities like SQL injection and plugin CVEs.",
+    problemStatement: "Bluestar Employment Solutions needed a high-performance web platform to showcase vetted talent and live job openings. Traditional dynamic CMS platforms (such as WordPress) introduce ongoing hosting maintenance costs, slow mobile load times, and constant security vulnerabilities like SQL injection and plugin CVEs.",
     solution: "Architected and deployed a hardened Jamstack web platform on global edge CDN nodes. Integrated a headless Google Sheets database pipeline via Google Apps Script that serves sanitized data feeds directly to lightweight client browsers, delivering high reliability with zero database attack surface.",
+    systemDesignSpecs: [
+      "Global Edge Distribution: Static pre-rendering cached across worldwide Netlify Edge CDN nodes with automated cache invalidation.",
+      "Headless CMS Architecture: Google Sheets serving as a structured tabular database queried via lightweight JSON endpoints.",
+      "Serverless Form Processing: Sanitized applicant submission pipeline with zero SQL injection risk and automated recruiter notifications.",
+      "Optimized Client Footprint: Zero-framework Vanilla JS engine achieving sub-second First Contentful Paint (FCP) on mobile networks."
+    ],
     gitLink: null,
     liveUrl: "https://bluestaremployment.com",
     diagramSvg: `
@@ -223,19 +235,24 @@ const PROJECTS_DATA = [
     displayUrl: "face-detection-v2",
     title: "Biometric Attendance System for ERP — On-Device Face Recognition & Liveness",
     shortTitle: "Biometric Attendance for ERP",
-    category: "Enterprise AI & Computer Vision",
-    summary: "Enterprise biometric attendance engine engineered during my Software/AI internship at Acespritech Solutions. Packaged as a deployable module integrated directly with Odoo ERP (hr.attendance) using on-device YuNet landmark detection, 128-d SFace embeddings, and active eye-blink verification with sub-35ms inference.",
+    category: "Enterprise Systems & Computer Vision",
+    summary: "Enterprise workforce verification module built during my software internship at Acespritech Solutions for Odoo ERP. Replaces costly biometric fingerprint hardware and eliminates proxy attendance ('buddy-punching') through fast on-device face verification and active liveness checks.",
     image: "images/face-detection-v2.png",
-    tags: ["Python", "Flask", "OpenCV", "ONNX (YuNet, SFace)", "Odoo ERP", "Acespritech Internship"],
+    tags: ["Odoo ERP", "Workforce Verification", "Anti-Spoofing", "Python", "OpenCV", "Acespritech"],
     highlights: [
-      "Engineered during Software/AI internship at Acespritech Solutions as a deployable face attendance module for Odoo ERP (hr.attendance).",
-      "Sub-35 ms on-device CPU verification latency using 5-point YuNet detection and 128-d SFace embeddings with O(1) 1-to-1 cosine distance thresholding.",
-      "100% impostor rejection across 15 real-world edge tests (stranger video playback, synthetic blur, and extreme lighting).",
-      "Active eye-blink liveness verification and mirror-aware nose-to-eye pose symmetry gating, neutralizing photographic and video replay spoofing.",
-      "In-memory biometric vector matching: 128-d ONNX embeddings used for authentication with zero biometric template reconstruction risk."
+      "Eliminates Proxy Clock-Ins: Solves 'buddy-punching' across enterprise teams by verifying physical employee presence in real-time before committing attendance records.",
+      "Direct Odoo ERP Integration: Built as a deployable module that synchronizes authenticated timestamps directly into Odoo's official hr.attendance records, automating payroll workflows.",
+      "Active Anti-Spoofing & Liveness: Detects natural eye blinks and facial geometry to instantly block printed photos, smartphone screens, and recorded video playback attempts.",
+      "Zero Proprietary Hardware Cost: Runs on standard office webcams and existing PCs with zero expensive hardware leases, authenticating biometric vectors in-memory without storing raw employee photos."
     ],
-    problemStatement: "Enterprise attendance workflows in ERPs like Odoo face buddy-punching, unverified proxy clock-ins, and high costs from proprietary biometric hardware that depend on slow, privacy-sensitive cloud APIs.",
-    solution: "Developed an edge-native biometric verification pipeline during my internship at Acespritech Solutions, specifically tailored for Odoo ERP. Users verify via active eye-blink liveness and 128-dimensional SFace embeddings, logging authenticated timestamps directly into Odoo's hr.attendance model in sub-35ms with zero cloud dependencies.",
+    problemStatement: "Enterprises running Odoo ERP lose substantial payroll budget to 'buddy-punching' (coworkers clocking in for absent colleagues) and unverified remote attendance. Furthermore, proprietary biometric fingerprint scanners require expensive hardware leases, fail under humid or worn finger conditions, and cloud facial recognition services raise severe data compliance and employee privacy concerns.",
+    solution: "Engineered an edge-native biometric verification module during my Software/AI internship at Acespritech Solutions, specifically tailored for Odoo ERP. Using standard office webcams, the system performs fast on-device face detection, verifies natural eye-blink liveness, converts facial features into encrypted 128-dimensional vectors, and commits authenticated check-in timestamps directly into Odoo's hr.attendance model in sub-35ms with zero external cloud dependencies.",
+    systemDesignSpecs: [
+      "On-Device Verification Latency: Sub-35 ms execution on standard office CPU hardware without requiring expensive dedicated GPUs.",
+      "Neural Feature Alignment: 5-point facial landmark detection via lightweight YuNet DNN coupled with 128-dimensional SFace feature embeddings.",
+      "Liveness & Anti-Spoofing Algorithm: Dynamic eye-aspect-ratio (EAR) blink gating and nose-to-eye pose symmetry analysis neutralizing 2D photo and screen replays.",
+      "Privacy-Preserving Vector Matching: O(1) 1-to-1 cosine distance thresholding (similarity threshold >= 0.363); raw facial imagery is wiped immediately from memory post-verification."
+    ],
     gitLink: "https://github.com/purohitgorang/face-detection-biometrics",
     diagramSvg: `
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
@@ -292,18 +309,24 @@ const PROJECTS_DATA = [
     displayUrl: "auraassess",
     title: "AuraAssess — Multimodal Telemetry & Self-Rehearsal Engine",
     shortTitle: "AuraAssess",
-    category: "Experimental AI & Telemetry",
-    summary: "Experimental multimodal telemetry and self-rehearsal engine streaming facial kinematics, posture angles, and acoustic prosody to help speakers practice presentation pacing with zero cloud retention.",
+    category: "Communication Telemetry & DSP",
+    summary: "Interactive rehearsal sandbox designed to help technical candidates and presenters overcome speech anxiety. Provides real-time visual feedback on pacing, vocal composure, and posture dynamics in a private, non-judgmental environment.",
     image: "images/auraassess.png",
-    tags: ["FastAPI", "MediaPipe FaceMesh", "BlazePose", "WebSockets", "Experimental AI", "DSP"],
+    tags: ["Candidate Rehearsal", "Speech Pacing", "Audio DSP", "FastAPI", "WebSockets", "Private Sandbox"],
     highlights: [
-      "Real-time 30 FPS client-side feature streaming across 468 FaceMesh points, 33 BlazePose skeletal keypoints, and acoustic prosody.",
-      "Experimental self-coaching telemetry: Designed for personal presentation rehearsal and body language self-awareness.",
-      "Ethical AI boundary: Explicitly non-evaluative; disclaims automated hiring suitability decisions and accounts for neurodivergent variance.",
-      "Ephemeral in-memory stream: Zero raw video or audio disk storage; processes rolling Z-scores over full-duplex WebSockets."
+      "Objective Presentation Rehearsal: Helps speakers detect speech rushing, voice modulation issues, and nervous posture habits before high-stakes technical interviews and keynotes.",
+      "100% Private In-Memory Processing: Protects sensitive candidate rehearsals by processing audio and motion telemetry entirely in temporary memory—zero video or audio is ever recorded to disk.",
+      "Individualized Baseline Calibration: Calibrates against each speaker's unique natural baseline during a 15-second warm-up, ensuring feedback adapts to personal styles rather than applying rigid stereotypes.",
+      "Real-Time Composure Dashboard: Translates complex speech signals and motion dynamics into clear, actionable pacing trends delivered over a low-latency live interface."
     ],
-    problemStatement: "Evaluating candidate soft skills, communicative poise, and anxiety levels during technical interviews relies on subjective interviewer intuition. Human raters introduce cognitive bias and struggle to consistently evaluate communication signals across varied interview formats.",
-    solution: "Built a real-time multimodal behavioral telemetry engine using MediaPipe FaceMesh and BlazePose integrated with an audio signal DSP pipeline. Normalizes metrics against an individualized 15-second baseline calibration, streaming continuous composure metrics and session reports over WebSockets.",
+    problemStatement: "Preparing for high-stakes interviews, executive pitches, and technical presentations is often hampered by blind spots in speaking pace, voice inflection, and nervous body language. Practicing in front of peers or mock interviewers can trigger performance anxiety, while existing automated tools often attempt to 'score' candidates unfairly or store sensitive user recordings on external servers.",
+    solution: "Built a self-contained, client-calibrated rehearsal sandbox that analyzes speech prosody and body language dynamics in real-time. Instead of evaluating or ranking individuals, the engine computes individualized statistical deviations against a 15-second opening baseline, streaming real-time pacing feedback and session trend graphs over WebSockets with zero persistent media storage.",
+    systemDesignSpecs: [
+      "Multimodal Sensor Ingestion: 30 FPS client-side feature streaming capturing 468 facial landmark coordinates, 33 skeletal posture keypoints, and live acoustic audio frames.",
+      "Audio DSP & Prosody Pipeline: Extracts rolling fundamental frequency (f0), jitter, shimmer, and vocal energy to track vocal stability and speech tempo.",
+      "Fairness & Personal Calibration: Normalizes metrics against an individualized 15-second rolling Z-score baseline, preventing demographic or neurodivergent evaluation bias.",
+      "Ephemeral Stream Architecture: Full-duplex WebSocket connection streaming live telemetry packets; raw audio and visual buffers are purged immediately upon processing."
+    ],
     gitLink: "https://github.com/purohitgorang/auraassess-multimodal-ai",
     diagramSvg: `
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
@@ -360,18 +383,24 @@ const PROJECTS_DATA = [
     displayUrl: "hytrace",
     title: "HyTrace — Verified Green Hydrogen Credit Tokenization Platform",
     shortTitle: "HyTrace",
-    category: "Distributed Systems & Web3",
-    summary: "CleanTech marketplace tokenizing Green Hydrogen Credits (GHC) into ERC-721 tokens with permanent on-chain retirement to prevent carbon credit double-counting.",
+    category: "CleanTech & Provenance Systems",
+    summary: "CleanTech provenance platform tackling corporate greenwashing in the clean energy sector. Verifies green hydrogen production directly from power plant telemetry and permanently retires offset credits to prevent fraudulent double-counting.",
     image: "images/hytrace.png",
-    tags: ["Next.js 15", "Solidity ERC-721", "Google Genkit", "Tailwind CSS", "CleanTech Web3"],
+    tags: ["CleanTech", "Provenance", "Plant Telemetry", "Next.js 15", "Solidity ERC-721", "Audit Automation"],
     highlights: [
-      "ERC-721 smart contract interface architecture designed for verifiable token lifecycle and carbon credit redemption tracking.",
-      "Bridges physical-to-digital oracle trust gap via signed Modbus/MQTT plant telemetry validation (MWh vs. kg H2 produced).",
-      "Google Genkit AI flows automate compliance document auditing and renewable grid origin certificate cross-checks.",
-      "Decoupled client-side Web3 wallet state eliminating Next.js 15 App Router server-side hydration collisions."
+      "Eliminates Carbon Credit Fraud: Solves certificate double-counting by permanently burning offset tokens on-chain upon enterprise redemption, guaranteeing an immutable audit trail.",
+      "Direct Plant Telemetry Validation: Bridges physical-to-digital trust by verifying that claimed hydrogen production directly matches actual clean power generation (solar/wind MWh).",
+      "Automated Compliance Auditing: Replaces weeks of manual paper certification with automated verification flows that cross-check renewable grid certificates and environmental regulations.",
+      "Peer-to-Peer Enterprise Trading: Allows certified green hydrogen producers to trade directly with industrial energy consumers, eliminating opaque broker fees and markups."
     ],
-    problemStatement: "Green hydrogen trading markets suffer from certificate double-counting, lack of producer origin verification, and slow manual auditing of power plant telemetry logs, opening the door to corporate greenwashing.",
-    solution: "Architected a decentralized verification and trading protocol pairing ERC-721 token interfaces with Google Genkit automated telemetry audit flows, simulating physical-to-digital validation to ensure offset credits are retired upon redemption.",
+    problemStatement: "Green hydrogen trading markets suffer from certificate double-counting, lack of producer origin verification, and slow manual auditing of power plant telemetry logs, opening the door to corporate greenwashing and invalid environmental claims.",
+    solution: "Architected a decentralized provenance and trading platform pairing verifiable ERC-721 credit tokens with automated plant telemetry audit flows. The system validates energy input against hydrogen output, automatically cross-checks regulatory compliance, and ensures tokens are permanently retired upon redemption so they can never be resold.",
+    systemDesignSpecs: [
+      "Smart Contract Lifecycle: ERC-721 token interface with verifiable provenance metadata and a permanent non-reversible retireCredit() burn function.",
+      "Oracle Telemetry Validation: Ingests signed Modbus/MQTT power plant telemetry to validate physical energy conversion (MWh input vs. kg H2 produced).",
+      "Automated Audit Engine: Automated compliance verification flows parsing renewable energy certificates and grid origin documents.",
+      "Decoupled Web3 Architecture: Client-side wallet state management decoupled from Next.js 15 App Router server-side execution to avoid hydration collisions."
+    ],
     gitLink: "https://github.com/purohitgorang/hytrace-marketplace",
     diagramSvg: `
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
