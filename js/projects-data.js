@@ -1,22 +1,11 @@
 // =============================================================================
-// Gorang Purohit — Technical Engineering Portfolio Data
-// Verified Fact-Checked System Architecture & Project Case Studies
-// 100% Aligned with Official Resume
+// Gorang Purohit — Portfolio Project & Technical Skills Data
 // =============================================================================
 
 const OPERATOR_PROFILE = {
   name: "Gorang Purohit",
   title: "Software Engineer",
-  tagline: "Building AI-driven security systems, edge computer vision, and high-performance distributed systems.",
-  bio: "Computer Science Engineering student specializing in Cybersecurity (CGPA: 8.92 / 10.0, Graduating 2027) with a strong foundation in edge computer vision, high-performance distributed systems, and technical leadership. Proven ability to take engineering systems from user requirements to production deployment—achieving 14.8ms CUDA inference on tactical vision pipelines, ~35ms edge biometric verification, and zero raw image retention architectures. Experienced leader as Event Lead at Google Developer Groups (GDG) on Campus, coordinating hackathons for 80+ engineering teams, delivering architectural mentorship, and managing a community of 1,600+ developers.",
-  location: "Ahmedabad, Gujarat, India • Available for Software Engineering, AI & Security Roles",
-  hobbies: [
-    { label: "Distance Running", icon: "🏃", tag: "2-Time Half Marathon Finisher" },
-    { label: "Road Cycling", icon: "🚴", tag: "Pacing & Focus" },
-    { label: "Physical Fitness", icon: "🏋️", tag: "Daily Discipline & Consistency" },
-    { label: "Motorcycling", icon: "🏍️", tag: "Open Road & Mechanics" },
-    { label: "Blood Donor & Community", icon: "🩸", tag: "10-Time Blood Donor (Red Cross)" }
-  ],
+  location: "Ahmedabad, Gujarat, India",
   links: {
     github: "https://github.com/purohitgorang",
     linkedin: "https://linkedin.com/in/gorangpurohit",
@@ -24,12 +13,11 @@ const OPERATOR_PROFILE = {
     email: "gorangpurohit@gmail.com",
     resume: "Gorang_Purohit_Resume.pdf"
   },
-  // Technical Skills — 100% Verified Match to Resume
+  // Technical Skills — Exact match to official resume
   skillCategories: [
     {
       category: "AI & Computer Vision",
       tag: "Vision Core",
-      color: "var(--pastel-yellow)",
       skills: [
         "PyTorch (CUDA)",
         "YOLOv8",
@@ -42,7 +30,6 @@ const OPERATOR_PROFILE = {
     {
       category: "Languages & Frameworks",
       tag: "Full Stack",
-      color: "var(--pastel-blue)",
       skills: [
         "Python (FastAPI, Flask)",
         "Scikit-Learn",
@@ -57,7 +44,6 @@ const OPERATOR_PROFILE = {
     {
       category: "Systems & Security",
       tag: "Defense & Core",
-      color: "var(--pastel-green)",
       skills: [
         "System Design",
         "Cryptography (HMAC-SHA256)",
@@ -70,8 +56,7 @@ const OPERATOR_PROFILE = {
     },
     {
       category: "Infrastructure & Tools",
-      tag: "Edge & DevOps",
-      color: "var(--pastel-purple)",
+      tag: "Edge & Ops",
       skills: [
         "Cloudflare Workers & Pages",
         "Docker",
@@ -81,13 +66,6 @@ const OPERATOR_PROFILE = {
         "Agile / Scrum Development"
       ]
     }
-  ],
-  skills: [
-    "Python (FastAPI, Flask)", "PyTorch (CUDA)", "YOLOv8", "OpenCV", "ONNX Runtime", 
-    "Biometric Liveness Verification", "React 19", "TypeScript", "JavaScript", "C++", 
-    "System Design", "Cryptography (HMAC-SHA256)", "Network Security", "TCP/IP & OSI Model", 
-    "Linux (Kali, Ubuntu)", "Cloudflare Workers & Pages", "Docker", "SQLite (WAL)", "Redis", 
-    "WebSockets", "Git & GitHub", "Agile / Scrum"
   ]
 };
 
@@ -97,76 +75,58 @@ const PROJECTS_DATA = [
     id: "01",
     slug: "face-detection-v2",
     displayUrl: "face-detection-v2",
-    title: "Biometric Attendance System for ERP — On-Device Face Recognition & Liveness",
-    shortTitle: "Biometric Attendance for ERP",
-    classification: "Enterprise Internship Deliverable — Acespritech Solutions (Odoo ERP)",
-    classificationIcon: "🏢",
-    classificationClass: "badge-enterprise",
-    category: "Enterprise Systems & Computer Vision",
-    summary: "Workforce attendance module engineered during my Software/AI internship at Acespritech Solutions for Odoo ERP. Eliminates proxy clock-ins ('buddy-punching') and replaces costly fingerprint hardware using standard office webcams.",
+    title: "Biometric Attendance System for ERP",
+    classification: "Internship Deliverable · Acespritech Solutions · Odoo ERP",
+    summary: "Workforce attendance module built during my Software/AI internship at Acespritech Solutions for Odoo ERP. Stops proxy clock-ins ('buddy-punching') and removes the need for proprietary biometric fingerprint hardware by running face and liveness checks directly on standard office webcams.",
     image: "images/face-detection-v2.png",
-    tags: ["Odoo ERP", "Workforce Verification", "Anti-Spoofing", "Python", "OpenCV", "Acespritech"],
+    tags: ["Odoo ERP", "Python", "Flask", "OpenCV", "ONNX Runtime"],
     highlights: [
-      "Direct Odoo ERP Integration: Built as a deployable module that syncs verified check-in timestamps straight into Odoo's hr.attendance records.",
-      "Prevents Proxy Clock-Ins: Requires active eye-blink and pose verification before logging attendance, blocking printed photos and phone-screen replays.",
-      "Runs on Everyday Office Hardware: Works on standard office webcams and PCs without expensive biometric scanners or dedicated GPU servers.",
-      "Privacy-First Verification: Confirms employee identity in temporary memory and wipes visual frames immediately without saving raw face photos to disk."
+      "Packaged as an installable Odoo module that logs verified employee check-ins straight into Odoo's hr.attendance model.",
+      "Requires an active eye-blink and pose check before confirming attendance, blocking printed photos and phone-screen replay attempts.",
+      "Runs on everyday office webcams and standard PCs without dedicated GPU servers or vendor-locked fingerprint scanners.",
+      "Verifies facial identity entirely in temporary memory and clears camera frames immediately without writing raw photos to disk."
     ],
-    problemStatement: "Enterprises running Odoo ERP lose substantial payroll budget to 'buddy-punching' (coworkers clocking in for absent colleagues) and unverified remote attendance. Furthermore, proprietary biometric fingerprint scanners require expensive hardware leases, fail under humid or worn finger conditions, and cloud facial recognition services raise severe data compliance and employee privacy concerns.",
-    solution: "Engineered an edge-native biometric verification module during my Software/AI internship at Acespritech Solutions, specifically tailored for Odoo ERP. Using standard office webcams, the system performs fast on-device face detection, verifies natural eye-blink liveness, converts facial features into encrypted 128-dimensional vectors, and commits authenticated check-in timestamps directly into Odoo's hr.attendance model in sub-35ms with zero external cloud dependencies.",
+    problemStatement: "Enterprises running Odoo ERP lose payroll budget to proxy clock-ins ('buddy-punching') and unverified remote check-ins. Proprietary fingerprint scanners require costly hardware leases, struggle with worn or humid fingertips, and cloud face APIs raise compliance and employee privacy concerns.",
+    solution: "Built an edge-native biometric verification module during my Software/AI internship at Acespritech Solutions tailored specifically for Odoo ERP. Standard office webcams feed frames locally for face detection, blink liveness gating, and 128-dimensional vector matching in temporary RAM, committing authenticated timestamps straight into Odoo's hr.attendance model with zero external cloud calls.",
     systemDesignSpecs: [
       "On-Device Verification Latency: Sub-35 ms execution on standard office CPU hardware using 5-point YuNet detection and 128-d SFace ONNX embeddings.",
       "Benchmark Evaluation (15 Edge Scenarios): 100% genuine match (0.742 mean similarity score vs. 0.365 threshold) and 100% impostor rejection (max impostor score 0.231).",
-      "Liveness & Anti-Spoofing Gate: Dynamic eye-aspect-ratio (EAR) blink gating and mirror-aware nose-to-eye pose symmetry analysis neutralizing 2D photo and screen replays.",
-      "Privacy-Preserving Vector Matching: O(1) 1-to-1 cosine distance thresholding; raw facial imagery is wiped immediately from memory post-verification with zero disk persistence."
+      "Liveness & Anti-Spoofing Gate: Dynamic eye-aspect-ratio (EAR) blink gating and mirror-aware nose-to-eye pose symmetry analysis blocking photo and video replay spoofing.",
+      "Privacy-Preserving Matching: O(1) 1-to-1 cosine distance verification; raw facial frames are wiped immediately from memory post-verification with zero disk persistence."
     ],
     gitLink: "https://github.com/purohitgorang/face-detection-biometrics",
     diagramSvg: `
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arr2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/>
           </marker>
         </defs>
-        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
-        
-        <!-- 1. Video Ingest -->
-        <rect x="20" y="70" width="120" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="80" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Webcam Feed</text>
+        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E4E4E7" stroke-width="1.5"/>
+        <rect x="20" y="70" width="120" height="75" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="80" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">Webcam Feed</text>
         <text x="80" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Flask Port 5000</text>
-        <text x="80" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">1-to-1 Match Mode</text>
-
-        <!-- Arrow 1 -> 2 -->
-        <line x1="140" y1="107" x2="185" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr2)"/>
+        <text x="80" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">1-to-1 Match Mode</text>
+        <line x1="140" y1="107" x2="185" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr2)"/>
         <text x="162" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Frames</text>
-
-        <!-- 2. Liveness & Detection -->
-        <rect x="190" y="60" width="150" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="265" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">YuNet + Blink Check</text>
-        <text x="265" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">Haar Eye Detection</text>
-        <text x="265" y="122" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">5-Point Alignment</text>
-        <text x="265" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Anti-Spoof Verified</text>
-
-        <!-- Arrow 2 -> 3 -->
-        <line x1="340" y1="107" x2="385" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr2)"/>
+        <rect x="190" y="60" width="150" height="95" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="265" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">YuNet + Blink Check</text>
+        <text x="265" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#1D4ED8">Haar Eye Detection</text>
+        <text x="265" y="122" font-family="monospace" font-size="9" text-anchor="middle" fill="#1D4ED8">5-Point Alignment</text>
+        <text x="265" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Anti-Spoof Verified</text>
+        <line x1="340" y1="107" x2="385" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr2)"/>
         <text x="362" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Crop</text>
-
-        <!-- 3. SFace Vector -->
-        <rect x="390" y="60" width="150" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
-        <text x="465" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">SFace Embedding</text>
-        <text x="465" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">128-d Vector</text>
-        <text x="465" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">Cosine Sim &gt;= 0.365</text>
-        <text x="465" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">Photos Discarded</text>
-
-        <!-- Arrow 3 -> 4 -->
-        <line x1="540" y1="107" x2="585" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr2)"/>
+        <rect x="390" y="60" width="150" height="95" rx="6" fill="#18181B" stroke="#18181B" stroke-width="1.5"/>
+        <text x="465" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">SFace Embedding</text>
+        <text x="465" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#93C5FD">128-d Vector</text>
+        <text x="465" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#CBD5E1">Cosine Sim &gt;= 0.365</text>
+        <text x="465" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#86EFAC">Photos Discarded</text>
+        <line x1="540" y1="107" x2="585" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr2)"/>
         <text x="562" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Auth</text>
-
-        <!-- 4. Storage & Audit -->
-        <rect x="590" y="70" width="150" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="665" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Audit &amp; Attendance</text>
+        <rect x="590" y="70" width="150" height="75" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="665" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">Audit &amp; Attendance</text>
         <text x="665" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">attendance.csv / Odoo ERP</text>
-        <text x="665" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">hr.attendance Sync</text>
+        <text x="665" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">hr.attendance Sync</text>
       </svg>
     `
   },
@@ -176,24 +136,20 @@ const PROJECTS_DATA = [
     id: "05",
     slug: "bluestar-employment",
     displayUrl: "bluestaremployment.com",
-    liveUrl: "https://bluestaremployment.com/",
-    title: "Bluestar Employment Solutions — Enterprise Staffing Platform",
-    shortTitle: "Bluestar Employment",
-    classification: "Commercial Client Production Deployment — bluestaremployment.com",
-    classificationIcon: "🌐",
-    classificationClass: "badge-commercial",
-    category: "Distributed Web & Systems",
-    summary: "Live enterprise staffing platform built for Bluestar Employment Solutions across Healthcare, Hospitality, FMCG, and Aviation. Replaces slow, maintenance-heavy CMS setups so HR coordinators can publish jobs directly without database or server overhead.",
+    liveUrl: "https://bluestaremployment.com",
+    title: "Bluestar Employment Solutions Recruitment Portal",
+    classification: "Client Production Deployment · bluestaremployment.com",
+    summary: "Live staffing portal built during my internship for Bluestar Employment Solutions across Healthcare, Hospitality, FMCG, and Aviation. Replaces slow, maintenance-heavy CMS setups so HR coordinators can publish and close openings without touching code or managing servers.",
     image: "images/bluestar-employment.png",
-    tags: ["Cloudflare Pages", "Cloudflare Workers", "Jamstack", "Google Apps Script", "Zero OpEx"],
+    tags: ["Cloudflare Pages", "Cloudflare Workers", "Google Apps Script", "JavaScript"],
     highlights: [
-      "Live Client Portal: Serving commercial recruitment operations at bluestaremployment.com across Healthcare, Hospitality, FMCG, and Aviation.",
-      "Zero-Code HR Operations: Headless Google Sheets & Apps Script workflow lets recruiters post, update, and close vacancies without developer help.",
-      "Fast Edge Delivery: Served via Cloudflare Pages and Workers to load reliably on mobile networks without database maintenance or recurring server fees.",
-      "Streamlined Mobile Applications: Refined candidate intake flows with recruiters to cut drop-offs and route applications straight to coordinators."
+      "Running in production at bluestaremployment.com for staffing operations across multiple industry verticals.",
+      "Backed by a headless Google Sheets and Apps Script workflow so non-technical recruiters can update active job listings directly.",
+      "Hosted on Cloudflare Pages and Workers to keep mobile page loads fast without a database server or monthly hosting fees.",
+      "Refined application steps with recruiters so mobile candidates can submit resumes directly to regional coordinators."
     ],
-    problemStatement: "Bluestar Employment Solutions needed a high-performance web platform to showcase vetted talent and live job openings. Traditional dynamic CMS platforms (such as WordPress) introduce ongoing hosting maintenance costs, slow mobile load times, and constant security vulnerabilities like SQL injection and plugin CVEs.",
-    solution: "Architected and deployed a hardened Jamstack web platform on Cloudflare Pages and Cloudflare Workers. Integrated a headless Google Sheets database pipeline via Google Apps Script that serves sanitized data feeds directly to lightweight client browsers, delivering high reliability with zero database attack surface and $0 recurring server OpEx.",
+    problemStatement: "Bluestar Employment Solutions needed a fast, dependable portal for live openings and candidate submissions without paying for dynamic CMS hosting or dealing with WordPress plugin maintenance and security patches.",
+    solution: "Built and deployed a Jamstack portal on Cloudflare Pages and Cloudflare Workers wired to a Google Sheets and Google Apps Script intake pipeline. Recruiters manage job rows in a familiar spreadsheet while applicants hit a fast, edge-cached site with zero database attack surface.",
     systemDesignSpecs: [
       "Edge Caching & Distribution: Global edge routing and caching via Cloudflare Pages and Cloudflare Workers, decreasing page load latency by 45%.",
       "High-Capacity Vacancy Routing: Dynamic listing and routing framework supporting 500+ concurrent job postings via Google Apps Script JSON feeds.",
@@ -201,53 +157,38 @@ const PROJECTS_DATA = [
       "Zero Recurring OpEx: Hardened Jamstack architecture operating with $0 recurring server hosting or database maintenance fees."
     ],
     gitLink: null,
-    liveUrl: "https://bluestaremployment.com",
     diagramSvg: `
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arr5" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/>
           </marker>
         </defs>
-        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
-        
-        <!-- 1. Google Sheets Input -->
-        <rect x="20" y="70" width="130" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="85" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Google Sheets CMS</text>
+        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E4E4E7" stroke-width="1.5"/>
+        <rect x="20" y="70" width="130" height="75" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="85" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">Google Sheets CMS</text>
         <text x="85" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Recruiter Job Postings</text>
-        <text x="85" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Zero Tech Overhead</text>
-
-        <!-- Arrow 1 -> 2 -->
-        <line x1="150" y1="107" x2="195" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr5)"/>
+        <text x="85" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Zero Tech Overhead</text>
+        <line x1="150" y1="107" x2="195" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr5)"/>
         <text x="172" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Webhook</text>
-
-        <!-- 2. Apps Script ETL -->
-        <rect x="200" y="60" width="150" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="275" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Apps Script Form Handler</text>
-        <text x="275" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">Data Sanitization</text>
-        <text x="275" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#64748B">Email Notifications</text>
-        <text x="275" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Zero SQL Injection</text>
-
-        <!-- Arrow 2 -> 3 -->
-        <line x1="350" y1="107" x2="395" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr5)"/>
+        <rect x="200" y="60" width="150" height="95" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="275" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">Apps Script Handler</text>
+        <text x="275" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#1D4ED8">Data Sanitization</text>
+        <text x="275" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#64748B">Coordinator Alerts</text>
+        <text x="275" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Zero SQL Surface</text>
+        <line x1="350" y1="107" x2="395" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr5)"/>
         <text x="372" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Deploy</text>
-
-        <!-- 3. Cloudflare Pages & Workers -->
-        <rect x="400" y="60" width="160" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
-        <text x="480" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">Cloudflare Pages &amp; Workers</text>
-        <text x="480" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">Edge Serverless Compute</text>
-        <text x="480" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">-45% Load Latency</text>
-        <text x="480" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">$0 Server OpEx</text>
-
-        <!-- Arrow 3 -> 4 -->
-        <line x1="560" y1="107" x2="605" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr5)"/>
+        <rect x="400" y="60" width="160" height="95" rx="6" fill="#18181B" stroke="#18181B" stroke-width="1.5"/>
+        <text x="480" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Cloudflare Pages &amp; Workers</text>
+        <text x="480" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#93C5FD">Edge Serverless Compute</text>
+        <text x="480" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#CBD5E1">-45% Load Latency</text>
+        <text x="480" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#86EFAC">$0 Server OpEx</text>
+        <line x1="560" y1="107" x2="605" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr5)"/>
         <text x="582" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">HTTP</text>
-
-        <!-- 4. Client Browser -->
-        <rect x="610" y="70" width="130" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">bluestaremployment.com</text>
+        <rect x="610" y="70" width="130" height="75" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">bluestaremployment.com</text>
         <text x="675" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Candidate Portal</text>
-        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Vanilla JS Engine</text>
+        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Vanilla JS Engine</text>
       </svg>
     `
   },
@@ -257,27 +198,23 @@ const PROJECTS_DATA = [
     id: "04",
     slug: "dronewatch",
     displayUrl: "dronewatch",
-    title: "Drone Hawk X — C-UAS Drone Detection & Surveillance Platform",
-    shortTitle: "Drone Hawk X",
-    classification: "Autonomous Edge AI & Perimeter Defense Architecture",
-    classificationIcon: "🛡️",
-    classificationClass: "badge-defense",
-    category: "Perimeter Defense & Computer Vision",
-    summary: "Offline airspace security tool built to detect unauthorized low-altitude drones in real time. Designed for sensitive perimeters where conventional radar misses small multi-rotors and cloud video APIs cannot be trusted or reached.",
+    title: "Drone Hawk X Airspace Surveillance System",
+    classification: "Edge Computer Vision · Perimeter Defense",
+    summary: "Offline airspace monitoring tool built to spot unauthorized low-altitude drones in real time. Designed for restricted sites where conventional radar misses small multi-rotors and cloud video APIs cannot be reached or trusted.",
     image: "images/drone-hawk-x-glass.png?v=3.0",
-    tags: ["Perimeter Defense", "Edge Vision", "Air-Gapped", "FastAPI", "React 19", "PyTorch"],
+    tags: ["PyTorch", "YOLOv8", "FastAPI", "React 19", "Air-Gapped"],
     highlights: [
-      "Low-Altitude Threat Detection: Spots incoming drones and FPV quadcopters in live optical feeds while filtering out birds and background aircraft.",
-      "Air-Gapped On-Premise Execution: Runs locally with zero internet dependency, external API keys, or cloud video uploads.",
-      "Anti-Spoofing Screen Defense: Rejects attempts to trick perimeter cameras using drone footage replayed on phones or monitors.",
-      "Local Incident Logging: Records detection alerts and timestamps locally for offline audit and operator review."
+      "Identifies commercial drones and FPV quadcopters in optical camera feeds while filtering out birds and normal aviation traffic.",
+      "Operates completely air-gapped on local hardware without internet connectivity, third-party API keys, or cloud video uploads.",
+      "Includes presentation-attack filtering to reject drone footage held up to the camera on phones or external monitors.",
+      "Writes detection timestamps and incident logs locally so security operators can audit events offline."
     ],
-    problemStatement: "Securing airspaces against unauthorized commercial drone incursions requires instant, reliable detection. Traditional radar systems struggle with low-altitude micro-drones, while cloud-based computer vision APIs introduce high latency, require constant internet connectivity that fails in field environments, and introduce critical data privacy risks in secured facilities.",
-    solution: "Architected a zero-cloud, 100% offline perimeter defense system. Video streams from optical cameras are ingested locally and processed through a drone-specialized neural network running directly on local hardware. A high-throughput FastAPI backend processes live frames and broadcasts real-time threat bounding boxes and incident telemetry to a tactical React 19 operator HUD.",
+    problemStatement: "Traditional perimeter radar often misses small, low-altitude commercial drones, while cloud vision APIs add network latency, break in field conditions without internet access, and leak sensitive camera footage outside secured perimeters.",
+    solution: "Built an offline perimeter monitoring pipeline combining a custom-trained YOLOv8 aerial detector with a FastAPI inference server and a tabbed React 19 operator interface. All video frames remain in local memory while verified events write strictly to local storage.",
     systemDesignSpecs: [
       "Hardware Latency: 14.8 ms (~67.5 FPS) CUDA inference on NVIDIA GTX 1650; 42.1 ms CPU fallback on Intel i7.",
-      "Benchmark Validation: 100% precision across 16-sample evaluation benchmark (8 multi-rotor/FPV drone targets, 8 environmental and aviation distractors).",
-      "Presentation Attack Defense (PAD): Dual-head spatial bounding-box suppression algorithm detecting display bezels, refresh rate anomalies, and screen replays.",
+      "Benchmark Validation: 100% precision across 16 real-world evaluation scenes (8 multi-rotor/FPV drone targets, 8 wildlife and aviation distractors).",
+      "Presentation Attack Defense (PAD): Dual-head spatial bounding-box suppression detecting display bezels and screen replay attacks.",
       "Zero-Egress Data Architecture: Local SQLite/JSON incident telemetry with zero external network packets and zero remote API keys."
     ],
     gitLink: "https://github.com/purohitgorang/dronewatch-surveillance",
@@ -285,50 +222,34 @@ const PROJECTS_DATA = [
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/>
           </marker>
         </defs>
-        <!-- Background Card -->
-        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
-        
-        <!-- Nodes -->
-        <!-- 1. Video Input -->
-        <rect x="20" y="70" width="125" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="82" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Optical Camera Feed</text>
+        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E4E4E7" stroke-width="1.5"/>
+        <rect x="20" y="70" width="125" height="75" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="82" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">Optical Camera Feed</text>
         <text x="82" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Webcam / Snapshot</text>
-        <text x="82" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">● Live Stream</text>
-
-        <!-- Arrow 1 -> 2 -->
-        <line x1="145" y1="107" x2="190" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr)"/>
+        <text x="82" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Local Video Stream</text>
+        <line x1="145" y1="107" x2="190" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr)"/>
         <text x="167" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Frames</text>
-
-        <!-- 2. FastAPI Backend -->
-        <rect x="195" y="60" width="150" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="270" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">FastAPI Server</text>
-        <text x="270" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">Port 8000 /detect</text>
+        <rect x="195" y="60" width="150" height="95" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="270" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">FastAPI Server</text>
+        <text x="270" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#1D4ED8">Port 8000 /detect</text>
         <text x="270" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#64748B">In-Memory Buffer</text>
-        <text x="270" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Zero Cloud Egress</text>
-
-        <!-- Arrow 2 -> 3 -->
-        <line x1="345" y1="107" x2="390" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr)"/>
+        <text x="270" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Zero Cloud Egress</text>
+        <line x1="345" y1="107" x2="390" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr)"/>
         <text x="367" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">VRAM</text>
-
-        <!-- 3. Local YOLOv8 Engine -->
-        <rect x="395" y="60" width="160" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
-        <text x="475" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">YOLOv8 Aerial Vision</text>
-        <text x="475" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">PyTorch CUDA / CPU</text>
-        <text x="475" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">drone_yolov8n.pt</text>
-        <text x="475" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">100% Offline</text>
-
-        <!-- Arrow 3 -> 4 -->
-        <line x1="555" y1="107" x2="600" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr)"/>
+        <rect x="395" y="60" width="160" height="95" rx="6" fill="#18181B" stroke="#18181B" stroke-width="1.5"/>
+        <text x="475" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">YOLOv8 Aerial Vision</text>
+        <text x="475" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#93C5FD">PyTorch CUDA / CPU</text>
+        <text x="475" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#CBD5E1">drone_yolov8n.pt</text>
+        <text x="475" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#86EFAC">100% Offline</text>
+        <line x1="555" y1="107" x2="600" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr)"/>
         <text x="577" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">HUD Boxes</text>
-
-        <!-- 4. UI Dashboard -->
-        <rect x="605" y="70" width="140" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">React 19 HUD UI</text>
+        <rect x="605" y="70" width="140" height="75" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">React 19 HUD UI</text>
         <text x="675" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Vite (Port 5173)</text>
-        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#EF4444">Incident Ledger</text>
+        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#B91C1C">Incident Logs</text>
       </svg>
     `
   },
@@ -338,23 +259,18 @@ const PROJECTS_DATA = [
     id: "02",
     slug: "auraassess",
     displayUrl: "auraassess",
-    title: "AuraAssess — Multimodal Telemetry & Self-Rehearsal Engine",
-    shortTitle: "AuraAssess",
-    classification: "Multimodal Behavioral Telemetry & Applied ML Platform",
-    classificationIcon: "🎙️",
-    classificationClass: "badge-telemetry",
-    category: "Communication Telemetry & DSP",
-    summary: "Interactive rehearsal sandbox designed to help technical candidates and presenters overcome speech anxiety. Provides real-time visual feedback on pacing, vocal composure, and posture dynamics in a private, non-judgmental environment.",
+    title: "AuraAssess Presentation Rehearsal Sandbox",
+    classification: "Audio & Motion Telemetry · Private Practice Tool",
+    summary: "Self-rehearsal tool built to help speakers catch speech rushing, flat pacing, and nervous posture habits before interviews or demos, without saving recordings or ranking people against generic scores.",
     image: "images/auraassess.png",
-    tags: ["Candidate Rehearsal", "Speech Pacing", "Audio DSP", "FastAPI", "WebSockets", "Private Sandbox"],
+    tags: ["Python", "FastAPI", "WebSockets", "Audio Signal Processing"],
     highlights: [
-      "Objective Presentation Rehearsal: Helps speakers detect speech rushing, voice modulation issues, and nervous posture habits before interviews and keynotes.",
-      "Private In-Memory Processing: Protects sensitive rehearsals by analyzing audio and motion telemetry purely in temporary memory with zero disk recording.",
-      "Individualized Baseline Calibration: Adapts to each speaker's natural pacing during a brief warm-up rather than judging against rigid stereotypes.",
-      "Real-Time Composure Dashboard: Translates speech signals and motion dynamics into clear, actionable pacing feedback during practice."
+      "Flags sudden pacing shifts and posture tension in real time so presenters can self-correct during private dry runs.",
+      "Calibrates to each speaker's natural baseline during a short warm-up instead of penalizing personal speaking styles.",
+      "Streams audio and landmark signals purely in memory so private practice footage never touches disk or external storage."
     ],
-    problemStatement: "Preparing for high-stakes interviews, executive pitches, and technical presentations is often hampered by blind spots in speaking pace, voice inflection, and nervous body language. Practicing in front of peers or mock interviewers can trigger performance anxiety, while existing automated tools often attempt to 'score' candidates unfairly or store sensitive user recordings on external servers.",
-    solution: "Built a self-contained, client-calibrated rehearsal sandbox that analyzes speech prosody and body language dynamics in real-time. Instead of evaluating or ranking individuals, the engine computes individualized statistical deviations against a 15-second opening baseline, streaming real-time pacing feedback and session trend graphs over WebSockets with zero persistent media storage.",
+    problemStatement: "Technical candidates and presenters rarely notice when they start rushing speech or tensing up mid-answer, yet practicing on recorded video or external scoring platforms raises privacy anxiety and treats different speaking styles unfairly.",
+    solution: "Built a self-contained rehearsal sandbox that establishes an individualized statistical baseline during an opening warm-up, then tracks deviations across vocal stability and posture landmarks over WebSockets while purging raw media buffers immediately.",
     systemDesignSpecs: [
       "Multimodal Sensor Ingestion: 30 FPS client-side feature streaming capturing 468 facial landmark coordinates, 33 skeletal posture keypoints, and live acoustic audio frames.",
       "Audio DSP & Prosody Pipeline: Extracts rolling fundamental frequency (f0), jitter, shimmer, and vocal energy to track vocal stability and speech tempo.",
@@ -366,48 +282,34 @@ const PROJECTS_DATA = [
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arr3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/>
           </marker>
         </defs>
-        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
-        
-        <!-- 1. Sensor Input -->
-        <rect x="20" y="70" width="130" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="85" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Webcam &amp; Mic</text>
+        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E4E4E7" stroke-width="1.5"/>
+        <rect x="20" y="70" width="130" height="75" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="85" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">Webcam &amp; Mic</text>
         <text x="85" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">30 FPS Video + Audio</text>
-        <text x="85" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Candidate Stream</text>
-
-        <!-- Arrow 1 -> 2 -->
-        <line x1="150" y1="107" x2="195" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr3)"/>
+        <text x="85" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Candidate Stream</text>
+        <line x1="150" y1="107" x2="195" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr3)"/>
         <text x="172" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">AV Stream</text>
-
-        <!-- 2. Feature Extraction -->
-        <rect x="200" y="60" width="150" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="275" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">MediaPipe Vision</text>
-        <text x="275" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">468 FaceMesh Points</text>
-        <text x="275" y="122" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">BlazePose Angles</text>
-        <text x="275" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Prosody DSP</text>
-
-        <!-- Arrow 2 -> 3 -->
-        <line x1="350" y1="107" x2="395" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr3)"/>
+        <rect x="200" y="60" width="150" height="95" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="275" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">Feature Extraction</text>
+        <text x="275" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#1D4ED8">468 FaceMesh Points</text>
+        <text x="275" y="122" font-family="monospace" font-size="9" text-anchor="middle" fill="#1D4ED8">33 Pose Keypoints</text>
+        <text x="275" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Prosody DSP</text>
+        <line x1="350" y1="107" x2="395" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr3)"/>
         <text x="372" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Features</text>
-
-        <!-- 3. Z-Score ML Engine -->
-        <rect x="400" y="60" width="160" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
-        <text x="480" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">Behavior Classifier</text>
-        <text x="480" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">15s Baseline Z-Score</text>
-        <text x="480" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">4 Behavioral States</text>
-        <text x="480" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">Fairness Normalized</text>
-
-        <!-- Arrow 3 -> 4 -->
-        <line x1="560" y1="107" x2="605" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr3)"/>
+        <rect x="400" y="60" width="160" height="95" rx="6" fill="#18181B" stroke="#18181B" stroke-width="1.5"/>
+        <text x="480" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Baseline Z-Score</text>
+        <text x="480" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#93C5FD">15s Rolling Calibration</text>
+        <text x="480" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#CBD5E1">4 Behavioral States</text>
+        <text x="480" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#86EFAC">Zero Disk Storage</text>
+        <line x1="560" y1="107" x2="605" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr3)"/>
         <text x="582" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">WS Telemetry</text>
-
-        <!-- 4. Interactive Dashboard -->
-        <rect x="610" y="70" width="130" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">WebSocket GUI</text>
+        <rect x="610" y="70" width="130" height="75" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">WebSocket UI</text>
         <text x="675" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Port 8080 Live</text>
-        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Composure Telemetry</text>
+        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Pacing Feedback</text>
       </svg>
     `
   },
@@ -417,23 +319,18 @@ const PROJECTS_DATA = [
     id: "03",
     slug: "hytrace",
     displayUrl: "hytrace",
-    title: "HyTrace — Verified Green Hydrogen Credit Tokenization Platform",
-    shortTitle: "HyTrace",
-    classification: "CleanTech Provenance & Automated Audit Infrastructure",
-    classificationIcon: "🌱",
-    classificationClass: "badge-cleantech",
-    category: "CleanTech & Provenance Systems",
-    summary: "CleanTech provenance platform tackling corporate greenwashing in the clean energy sector. Verifies green hydrogen production directly from power plant telemetry and permanently retires offset credits to prevent fraudulent double-counting.",
+    title: "HyTrace Green Hydrogen Credit Platform",
+    classification: "CleanTech Provenance · Audit Automation",
+    summary: "Provenance and credit retirement platform tackling double-counting in green hydrogen markets. Cross-checks energy generation logs before issuing credits and permanently retires tokens once claimed.",
     image: "images/hytrace.png",
-    tags: ["CleanTech", "Provenance", "Plant Telemetry", "Next.js 15", "Solidity ERC-721", "Audit Automation"],
+    tags: ["Next.js", "TypeScript", "Solidity", "Audit Automation"],
     highlights: [
-      "Eliminates Carbon Credit Fraud: Solves certificate double-counting by permanently burning offset tokens on-chain upon enterprise redemption, guaranteeing an immutable audit trail.",
-      "Direct Plant Telemetry Validation: Bridges physical-to-digital trust by verifying that claimed hydrogen production directly matches actual clean power generation (solar/wind MWh).",
-      "Automated Compliance Auditing: Replaces weeks of manual paper certification with automated verification flows that cross-check renewable grid certificates and environmental regulations.",
-      "Peer-to-Peer Enterprise Trading: Allows certified green hydrogen producers to trade directly with industrial energy consumers, eliminating opaque broker fees and markups."
+      "Prevents certificate double-counting by permanently retiring offset credits on-chain when claimed by an industrial buyer.",
+      "Matches claimed hydrogen output against renewable power generation logs before issuing tradable credits.",
+      "Replaces slow paper certificate reviews with automated checks against renewable origin records."
     ],
-    problemStatement: "Green hydrogen trading markets suffer from certificate double-counting, lack of producer origin verification, and slow manual auditing of power plant telemetry logs, opening the door to corporate greenwashing and invalid environmental claims.",
-    solution: "Architected a decentralized provenance and trading platform pairing verifiable ERC-721 credit tokens with automated plant telemetry audit flows. The system validates energy input against hydrogen output, automatically cross-checks regulatory compliance, and ensures tokens are permanently retired upon redemption so they can never be resold.",
+    problemStatement: "Green hydrogen credit markets suffer from double-counting, weak origin verification, and slow manual paper audits of plant generation logs, making invalid environmental claims easy to slip through.",
+    solution: "Built a provenance and trading platform pairing non-reusable ERC-721 credit tokens with automated plant telemetry verification. Energy input is checked against hydrogen output before minting, and tokens are permanently burned on redemption.",
     systemDesignSpecs: [
       "Smart Contract Lifecycle: ERC-721 token interface with verifiable provenance metadata and a permanent non-reversible retireCredit() burn function.",
       "Oracle Telemetry Validation: Ingests signed Modbus/MQTT power plant telemetry to validate physical energy conversion (MWh input vs. kg H2 produced).",
@@ -445,48 +342,34 @@ const PROJECTS_DATA = [
       <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arr4" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/>
           </marker>
         </defs>
-        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
-        
-        <!-- 1. Producer Telemetry -->
-        <rect x="20" y="70" width="130" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="85" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Clean Power Logs</text>
+        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E4E4E7" stroke-width="1.5"/>
+        <rect x="20" y="70" width="130" height="75" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="85" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">Clean Power Logs</text>
         <text x="85" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Solar / Wind MWh</text>
-        <text x="85" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Producer Verification</text>
-
-        <!-- Arrow 1 -> 2 -->
-        <line x1="150" y1="107" x2="195" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr4)"/>
+        <text x="85" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Origin Telemetry</text>
+        <line x1="150" y1="107" x2="195" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr4)"/>
         <text x="172" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Audit</text>
-
-        <!-- 2. AI Compliance Flow -->
-        <rect x="200" y="60" width="150" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="275" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Google Genkit AI</text>
-        <text x="275" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">Telemetry Parsing</text>
-        <text x="275" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#64748B">Provenance Validation</text>
-        <text x="275" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Audit Passed</text>
-
-        <!-- Arrow 2 -> 3 -->
-        <line x1="350" y1="107" x2="395" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr4)"/>
+        <rect x="200" y="60" width="150" height="95" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="275" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">Compliance Engine</text>
+        <text x="275" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#1D4ED8">Modbus / MQTT Parsing</text>
+        <text x="275" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#64748B">MWh vs kg H2 Match</text>
+        <text x="275" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Audit Passed</text>
+        <line x1="350" y1="107" x2="395" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr4)"/>
         <text x="372" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Mint</text>
-
-        <!-- 3. Smart Contract -->
-        <rect x="400" y="60" width="160" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
-        <text x="480" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">Solidity ERC-721</text>
-        <text x="480" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">GHC Token Contract</text>
-        <text x="480" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">retireCredit() Burn</text>
-        <text x="480" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">No Double Count</text>
-
-        <!-- Arrow 3 -> 4 -->
-        <line x1="560" y1="107" x2="605" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr4)"/>
+        <rect x="400" y="60" width="160" height="95" rx="6" fill="#18181B" stroke="#18181B" stroke-width="1.5"/>
+        <text x="480" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Solidity ERC-721</text>
+        <text x="480" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#93C5FD">GHC Token Contract</text>
+        <text x="480" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#CBD5E1">retireCredit() Burn</text>
+        <text x="480" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#86EFAC">No Double Count</text>
+        <line x1="560" y1="107" x2="605" y2="107" stroke="#18181B" stroke-width="1.5" marker-end="url(#arr4)"/>
         <text x="582" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Trade</text>
-
-        <!-- 4. Marketplace UI -->
-        <rect x="610" y="70" width="130" height="75" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
-        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Next.js 15 P2P</text>
+        <rect x="610" y="70" width="130" height="75" rx="6" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5"/>
+        <text x="675" y="98" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#18181B">Next.js 15 Portal</text>
         <text x="675" y="115" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Port 9002 Trading</text>
-        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">Zero Broker Markup</text>
+        <text x="675" y="130" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#15803D">Direct Settlement</text>
       </svg>
     `
   }

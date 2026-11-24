@@ -1,150 +1,101 @@
 // =============================================================================
 // Gorang Purohit — Portfolio Controller
-// Neo-Brutalist Project Showcase & System Design Flowchart Inspector
 // =============================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
   const modalContainer = document.getElementById('modalContainer');
 
-  // 1. Render Skills in About Section with Deep AI & Vision Focus
-  const skillsContainer = document.getElementById('skillsContainer');
-  if (skillsContainer && typeof OPERATOR_PROFILE !== 'undefined') {
-    if (OPERATOR_PROFILE.skillCategories) {
-      skillsContainer.innerHTML = OPERATOR_PROFILE.skillCategories.map(group => `
-        <div class="skill-category-block" style="margin-bottom: 1.35rem;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
-            <div style="display: flex; align-items: center; gap: 0.45rem;">
-              <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: ${group.color}; border: 1.5px solid var(--ink-primary);"></span>
-              <h4 style="font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; color: var(--ink-primary); margin: 0;">
-                ${group.category}
-              </h4>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--ink-muted); text-transform: uppercase;">
-              ${group.tag}
-            </span>
-          </div>
-          <div class="skills-badge-wrap" style="margin-top: 0; gap: 0.45rem;">
-            ${group.skills.map(s => `
-              <span class="skill-tag-pill" style="font-size: 0.78rem; padding: 0.3rem 0.65rem;">${s}</span>
-            `).join('')}
-          </div>
-        </div>
-      `).join('');
-    } else {
-      skillsContainer.innerHTML = OPERATOR_PROFILE.skills.map(skill => `
-        <span class="skill-tag-pill">${skill}</span>
-      `).join('');
-    }
-  }
-
-  // Tint mapping for project media frames
-  const tintClasses = {
-    '04': 'tint-lavender',
-    '01': 'tint-coral',
-    '02': 'tint-mint',
-    '03': 'tint-sky',
-    '05': 'tint-amber'
+  const ICONS = {
+    diagram: `<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="8.5" y="14" width="7" height="7" rx="1"/><path d="M6.5 10v2a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-2"/><path d="M12 13v1"/></svg>`,
+    external: `<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg>`,
+    close: `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`,
+    copy: `<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`
   };
 
-  const tagColorClasses = ['tag-yellow', 'tag-purple', 'tag-pink', 'tag-green', 'tag-blue'];
+  // 1. Render Verified Technical Skills
+  const skillsContainer = document.getElementById('skillsContainer');
+  if (skillsContainer && typeof OPERATOR_PROFILE !== 'undefined' && OPERATOR_PROFILE.skillCategories) {
+    skillsContainer.innerHTML = OPERATOR_PROFILE.skillCategories.map(group => `
+      <div class="skill-group">
+        <div class="skill-group-header">
+          <h4 class="skill-group-title">${group.category}</h4>
+          <span class="skill-group-tag">${group.tag}</span>
+        </div>
+        <div class="skill-pills-row">
+          ${group.skills.map(skill => `<span class="skill-chip">${skill}</span>`).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
 
-  // 2. Render Project Cards with Actual UI Screenshots
+  // 2. Render Project Cards
   const projectsList = document.getElementById('projectsList');
   if (projectsList && typeof PROJECTS_DATA !== 'undefined') {
-    projectsList.innerHTML = PROJECTS_DATA.map((project, idx) => {
-      const tintClass = tintClasses[project.id] || 'tint-lavender';
-      const mainTagColor = tagColorClasses[idx % tagColorClasses.length];
+    projectsList.innerHTML = PROJECTS_DATA.map(project => `
+      <article class="project-card" data-project-id="${project.id}">
+        <div class="project-media">
+          <div class="screenshot-frame" data-id="${project.id}" title="Inspect system design & architecture">
+            <img
+              src="${project.image}"
+              alt="${project.title} Interface Screenshot"
+              class="screenshot-img"
+              loading="lazy"
+            />
+          </div>
+        </div>
 
-      return `
-        <article class="neo-project-card" data-project-id="${project.id}">
-          <!-- Left: Real UI Screenshot in Neo-Brutalist Browser Frame -->
-          <div class="project-media-col ${tintClass}">
-            <div class="browser-frame" data-id="${project.id}" title="Click to inspect system design architecture">
-              <div class="browser-bar">
-                <span class="browser-dot dot-red"></span>
-                <span class="browser-dot dot-yellow"></span>
-                <span class="browser-dot dot-green"></span>
-                <span class="browser-address">${project.displayUrl || project.slug}</span>
-              </div>
-              <img 
-                src="${project.image}" 
-                alt="${project.title} Interface Screenshot" 
-                class="browser-image"
-                loading="lazy"
-              />
-            </div>
+        <div class="project-body">
+          <div>
+            ${project.classification ? `<div class="project-eyebrow">${project.classification}</div>` : ''}
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-summary">${project.summary}</p>
+            <ul class="clean-bullets">
+              ${project.highlights.map(item => `<li>${item}</li>`).join('')}
+            </ul>
           </div>
 
-          <!-- Right: Technical Details & Case Study Information -->
-          <div class="project-content-col">
-            <div>
-              ${project.classification ? `
-                <div class="project-classification-badge ${project.classificationClass || ''}">
-                  <span class="classification-badge-icon">${project.classificationIcon || '✦'}</span>
-                  <span class="classification-badge-text">${project.classification}</span>
-                </div>
-              ` : ''}
-
-              <div class="project-tags-row">
-                <span class="neo-tag ${mainTagColor}">${project.category}</span>
-                ${project.tags.slice(0, 3).map((tag, tIdx) => `
-                  <span class="neo-tag ${tagColorClasses[(tIdx + 1) % tagColorClasses.length]}">${tag}</span>
-                `).join('')}
-              </div>
-
-              <h3 class="project-h3-title">${project.title}</h3>
-              <p class="project-summary-text">${project.summary}</p>
-              
-              <ul class="project-bullets-list">
-                ${project.highlights.map(h => `<li>${h}</li>`).join('')}
-              </ul>
+          <div class="project-footer">
+            <div class="project-tags">
+              ${project.tags.slice(0, 4).map(tag => `<span class="subtle-tag">${tag}</span>`).join('')}
             </div>
 
-            <div class="project-actions-row">
-              <button class="btn-card-diagram" data-id="${project.id}">
-                <span>System Design & Flowchart</span> ➔
+            <div class="project-actions">
+              <button class="btn-diagram" type="button" data-id="${project.id}">
+                ${ICONS.diagram}
+                <span>System Design &amp; Flowchart</span>
               </button>
               ${project.liveUrl ? `
-                <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-live" onclick="event.stopPropagation()">
-                  Live Website ↗
+                <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-link-outline" onclick="event.stopPropagation()">
+                  <span>Live Site</span>
+                  ${ICONS.external}
                 </a>
               ` : ''}
               ${project.gitLink ? `
-                <a href="${project.gitLink}" target="_blank" rel="noopener noreferrer" class="btn-card-github" onclick="event.stopPropagation()">
-                  GitHub ↗
+                <a href="${project.gitLink}" target="_blank" rel="noopener noreferrer" class="btn-link-outline" onclick="event.stopPropagation()">
+                  <span>GitHub</span>
+                  ${ICONS.external}
                 </a>
               ` : ''}
             </div>
           </div>
-        </article>
-      `;
-    }).join('');
+        </div>
+      </article>
+    `).join('');
 
-    // Attach click listeners to open System Design Modal
-    document.querySelectorAll('.btn-card-diagram').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+    document.querySelectorAll('.btn-diagram, .screenshot-frame').forEach(el => {
+      el.addEventListener('click', (e) => {
         e.stopPropagation();
-        const pId = btn.getAttribute('data-id');
-        openSystemDesignModal(pId);
+        openSystemDesignModal(el.getAttribute('data-id'));
       });
     });
 
-    document.querySelectorAll('.browser-frame').forEach(frame => {
-      frame.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const pId = frame.getAttribute('data-id');
-        openSystemDesignModal(pId);
-      });
-    });
-
-    // Direct URL parameter or hash navigation to open modal (e.g. ?project=04 or #modal-04)
+    // Optional URL parameter or hash deep-linking (?project=01 or #modal-01)
     const urlParams = new URLSearchParams(window.location.search);
     const projParam = urlParams.get('project');
     if (projParam) {
       openSystemDesignModal(projParam);
     } else if (window.location.hash && window.location.hash.startsWith('#modal-')) {
-      const pId = window.location.hash.replace('#modal-', '');
-      openSystemDesignModal(pId);
+      openSystemDesignModal(window.location.hash.replace('#modal-', ''));
     }
   }
 
@@ -155,73 +106,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalContainer.innerHTML = `
       <div class="modal-overlay" id="modalBackdrop">
-        <div class="modal-window" onclick="event.stopPropagation()">
+        <div class="modal-window" onclick="event.stopPropagation()" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
           <div class="modal-header">
-            <div class="modal-title-group">
-              ${project.classification ? `
-                <div class="project-classification-badge ${project.classificationClass || ''}" style="margin-bottom: 0.45rem;">
-                  <span class="classification-badge-icon">${project.classificationIcon || '✦'}</span>
-                  <span class="classification-badge-text">${project.classification}</span>
-                </div>
-              ` : ''}
-              <span class="modal-category-label">${project.category}</span>
-              <h3>${project.title}</h3>
+            <div>
+              ${project.classification ? `<span class="modal-eyebrow">${project.classification}</span>` : ''}
+              <h3 class="modal-title" id="modalTitle">${project.title}</h3>
             </div>
-            <button class="btn-close-modal" id="closeModalBtn" title="Close (Esc)">✕</button>
+            <button class="btn-close-modal" id="closeModalBtn" type="button" title="Close (Esc)" aria-label="Close modal">
+              ${ICONS.close}
+            </button>
           </div>
 
           <div class="modal-scroll-body">
-            <!-- System Design & Signal Flowchart -->
             <div>
-              <h4 class="modal-section-h4">
-                <span>📐</span> System Design Architecture & Signal Flow
-              </h4>
-              <div class="modal-diagram-container">
+              <h4 class="modal-section-title">System Design Architecture &amp; Signal Flow</h4>
+              <div class="modal-diagram-box">
                 ${project.diagramSvg}
               </div>
             </div>
 
-            <!-- Problem Statement -->
             <div>
-              <h4 class="modal-section-h4">
-                <span>⚠️</span> The Operational Problem It Solves
-              </h4>
+              <h4 class="modal-section-title">Operational Problem</h4>
               <p class="modal-text">${project.problemStatement}</p>
             </div>
 
-            <!-- Engineering Solution -->
             <div>
-              <h4 class="modal-section-h4">
-                <span>⚙️</span> Engineering Solution & System Flow
-              </h4>
+              <h4 class="modal-section-title">Engineering Solution</h4>
               <p class="modal-text">${project.solution}</p>
             </div>
 
-            <!-- Deep Technical Specifications & Benchmarks -->
             <div>
-              <h4 class="modal-section-h4">
-                <span>🔬</span> Deep Technical Architecture & Verified Specs
-              </h4>
-              <ul class="project-bullets-list" style="margin-bottom: 0;">
-                ${(project.systemDesignSpecs || project.highlights).map(h => `<li>${h}</li>`).join('')}
+              <h4 class="modal-section-title">Verified Benchmarks &amp; Technical Specifications</h4>
+              <ul class="clean-bullets">
+                ${(project.systemDesignSpecs || project.highlights).map(spec => `<li>${spec}</li>`).join('')}
               </ul>
             </div>
 
-            <!-- Reproducible Git Clone / Live Platform Box -->
-            <div class="modal-clone-row">
+            <div class="modal-clone-bar">
               ${project.gitLink ? `
-                <span class="clone-code">git clone ${project.gitLink}.git</span>
-                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <code class="clone-code">git clone ${project.gitLink}.git</code>
+                <div class="modal-clone-actions">
                   ${project.liveUrl ? `
-                    <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-copy-clone" style="text-decoration: none; background: #BAE6FD;">Live Website ↗</a>
+                    <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-link-outline">
+                      <span>Live Site</span>
+                      ${ICONS.external}
+                    </a>
                   ` : ''}
-                  <button class="btn-copy-clone" id="copyGitBtn">Copy Command 📋</button>
+                  <button class="btn-copy-email" id="copyGitBtn" type="button">
+                    ${ICONS.copy}
+                    <span>Copy Clone Command</span>
+                  </button>
                 </div>
               ` : `
-                <span class="clone-code" style="color: #64748B;">Production Deployment — ${project.liveUrl ? project.liveUrl.replace('https://', '') : 'Live Platform'}</span>
-                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <span class="clone-code">Production Deployment · ${project.liveUrl ? project.liveUrl.replace('https://', '') : 'Live Platform'}</span>
+                <div class="modal-clone-actions">
                   ${project.liveUrl ? `
-                    <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-copy-clone" style="text-decoration: none; background: #BAE6FD; color: #0369A1; font-weight: 700;">Visit Live Platform ↗</a>
+                    <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-link-outline">
+                      <span>Visit Live Platform</span>
+                      ${ICONS.external}
+                    </a>
                   ` : ''}
                 </div>
               `}
@@ -231,50 +174,47 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-    // Modal Events
     const closeModal = () => {
       modalContainer.innerHTML = '';
+      document.removeEventListener('keydown', escHandler);
       if (window.location.hash.startsWith('#modal-')) {
         history.replaceState(null, null, ' ');
       }
     };
 
+    const escHandler = (e) => {
+      if (e.key === 'Escape') closeModal();
+    };
+
     document.getElementById('closeModalBtn')?.addEventListener('click', closeModal);
     document.getElementById('modalBackdrop')?.addEventListener('click', closeModal);
+    document.addEventListener('keydown', escHandler);
 
     const copyGitBtn = document.getElementById('copyGitBtn');
     if (copyGitBtn) {
       copyGitBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(`git clone ${project.gitLink}.git`);
-        copyGitBtn.textContent = 'Copied! ✓';
-        setTimeout(() => { copyGitBtn.textContent = 'Copy Command 📋'; }, 2000);
+        navigator.clipboard.writeText(`git clone ${project.gitLink}.git`).then(() => {
+          const span = copyGitBtn.querySelector('span');
+          if (span) span.textContent = 'Copied';
+          setTimeout(() => { if (span) span.textContent = 'Copy Clone Command'; }, 2000);
+        });
       });
     }
-
-    const escHandler = (e) => {
-      if (e.key === 'Escape') {
-        closeModal();
-        document.removeEventListener('keydown', escHandler);
-      }
-    };
-    document.addEventListener('keydown', escHandler);
   }
 
   // 4. Copy Email Handler
   const btnCopyEmail = document.getElementById('btnCopyEmail');
+  const copyEmailLabel = document.getElementById('copyEmailLabel');
   if (btnCopyEmail) {
     btnCopyEmail.addEventListener('click', () => {
       const email = 'gorangpurohit@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
-        const originalText = btnCopyEmail.textContent;
-        btnCopyEmail.textContent = 'Copied! ✓';
-        btnCopyEmail.style.backgroundColor = '#BBF7D0';
+        if (copyEmailLabel) copyEmailLabel.textContent = 'Copied';
         setTimeout(() => {
-          btnCopyEmail.textContent = originalText;
-          btnCopyEmail.style.backgroundColor = '';
+          if (copyEmailLabel) copyEmailLabel.textContent = 'Copy';
         }, 2000);
       }).catch(() => {
-        window.location.href = `mailto:gorangpurohit@gmail.com`;
+        window.location.href = `mailto:${email}`;
       });
     });
   }
