@@ -1,20 +1,21 @@
 // =============================================================================
 // Gorang Purohit — Technical Engineering Portfolio Data
 // Verified Fact-Checked System Architecture & Project Case Studies
+// 100% Aligned with Official Resume
 // =============================================================================
 
 const OPERATOR_PROFILE = {
   name: "Gorang Purohit",
   title: "Software Engineer",
-  tagline: "Building AI-driven security systems, computer vision, and defensive infrastructure.",
-  bio: "Security-focused software engineer specializing in AI-driven threat detection, computer vision monitoring, and defensive infrastructure. Experienced in designing machine learning systems for intrusion detection, edge computer vision, and packet-level threat analysis. Skilled in Python, Flask, FastAPI, PyTorch, and networking protocols, with technical leadership experience managing cross-functional engineering teams.",
-  location: "Available for Software Engineering, AI & Security Roles",
+  tagline: "Building AI-driven security systems, edge computer vision, and high-performance distributed systems.",
+  bio: "Computer Science Engineering student specializing in Cybersecurity (CGPA: 8.92 / 10.0, Graduating 2027) with a strong foundation in edge computer vision, high-performance distributed systems, and technical leadership. Proven ability to take engineering systems from user requirements to production deployment—achieving 14.8ms CUDA inference on tactical vision pipelines, ~35ms edge biometric verification, and zero raw image retention architectures. Experienced leader as Event Lead at Google Developer Groups (GDG) on Campus, coordinating hackathons for 80+ engineering teams, delivering architectural mentorship, and managing a community of 1,600+ developers.",
+  location: "Ahmedabad, Gujarat, India • Available for Software Engineering, AI & Security Roles",
   hobbies: [
-    { label: "Distance Running", icon: "🏃", tag: "Endurance & Mental Stamina" },
+    { label: "Distance Running", icon: "🏃", tag: "2-Time Half Marathon Finisher" },
     { label: "Road Cycling", icon: "🚴", tag: "Pacing & Focus" },
-    { label: "Fitness & Strength", icon: "🏋️", tag: "Daily Discipline" },
-    { label: "Motorcycling", icon: "🏍️", tag: "Cruising & Mechanics" },
-    { label: "Connecting with People", icon: "🎙️", tag: "Curiosity & Collaboration" }
+    { label: "Physical Fitness", icon: "🏋️", tag: "Daily Discipline & Consistency" },
+    { label: "Motorcycling", icon: "🏍️", tag: "Open Road & Mechanics" },
+    { label: "Blood Donor & Community", icon: "🩸", tag: "10-Time Blood Donor (Red Cross)" }
   ],
   links: {
     github: "https://github.com/purohitgorang",
@@ -23,57 +24,70 @@ const OPERATOR_PROFILE = {
     email: "gorangpurohit@gmail.com",
     resume: "Gorang_Purohit_Resume.pdf"
   },
+  // Technical Skills — 100% Verified Match to Resume
   skillCategories: [
     {
       category: "AI & Computer Vision",
-      tag: "Core Focus",
+      tag: "Vision Core",
       color: "var(--pastel-yellow)",
       skills: [
         "PyTorch (CUDA)",
-        "YOLOv8 (Object Detection)",
-        "OpenCV (DNN & YuNet)",
-        "SFace (128-d Embeddings)",
-        "ONNX Runtime (Edge AI)",
-        "MediaPipe (FaceMesh & BlazePose)",
-        "Anti-Spoofing & Liveness (PAD)",
-        "Real-Time Inference (~14.8ms)",
-        "Gemini API & Genkit"
+        "YOLOv8",
+        "OpenCV",
+        "ONNX Runtime (YuNet, SFace)",
+        "Object Detection",
+        "Biometric Liveness Verification (PAD)"
       ]
     },
     {
-      category: "Applied ML & Signal Processing",
-      tag: "Anomaly & DSP",
+      category: "Languages & Frameworks",
+      tag: "Full Stack",
       color: "var(--pastel-blue)",
       skills: [
+        "Python (FastAPI, Flask)",
         "Scikit-Learn",
-        "Isolation Forest (Anomaly Detection)",
-        "Random Forest Classifiers",
-        "Audio DSP (MFCCs & Prosody)",
-        "Multimodal Sensor Fusion",
-        "Vector Embeddings & Cosine Distance"
+        "React 19",
+        "TypeScript",
+        "JavaScript",
+        "C++",
+        "Bash",
+        "HTML5 / CSS3"
       ]
     },
     {
-      category: "Backend, Systems & Security",
-      tag: "Infrastructure",
+      category: "Systems & Security",
+      tag: "Defense & Core",
       color: "var(--pastel-green)",
       skills: [
-        "Python (FastAPI, Flask)",
+        "System Design",
+        "Cryptography (HMAC-SHA256)",
+        "Network Security",
+        "TCP/IP & OSI Model",
+        "Linux (Kali, Ubuntu)",
+        "Redis",
+        "SQLite (WAL Mode)"
+      ]
+    },
+    {
+      category: "Infrastructure & Tools",
+      tag: "Edge & DevOps",
+      color: "var(--pastel-purple)",
+      skills: [
+        "Cloudflare Workers & Pages",
+        "Docker",
         "WebSockets (Live Telemetry)",
-        "Scapy (Custom Frame Crafting)",
-        "Wireshark (PCAP Analysis)",
-        "Network Protocols (TCP/IP, OSI)",
-        "Linux (Ubuntu, Kali)",
-        "Docker Containerization",
-        "REST APIs & Microservices"
+        "Git & GitHub",
+        "Postman (API Testing)",
+        "Agile / Scrum Development"
       ]
     }
   ],
   skills: [
-    "PyTorch (CUDA)", "YOLOv8", "OpenCV", "YuNet Face Detection", "SFace 128-d Embeddings", 
-    "ONNX Runtime", "Computer Vision", "Anti-Spoofing / PAD", "MediaPipe", "Scikit-Learn", 
-    "Isolation Forest", "Audio DSP", "FastAPI", "Flask", "Python", "WebSockets", 
-    "Scapy", "Wireshark", "Network Protocols (TCP/IP, OSI)", "Linux (Ubuntu, Kali)", "Docker"
+    "Python (FastAPI, Flask)", "PyTorch (CUDA)", "YOLOv8", "OpenCV", "ONNX Runtime", 
+    "Biometric Liveness Verification", "React 19", "TypeScript", "JavaScript", "C++", 
+    "System Design", "Cryptography (HMAC-SHA256)", "Network Security", "TCP/IP & OSI Model", 
+    "Linux (Kali, Ubuntu)", "Cloudflare Workers & Pages", "Docker", "SQLite (WAL)", "Redis", 
+    "WebSockets", "Git & GitHub", "Agile / Scrum"
   ]
 };
 
@@ -95,9 +109,9 @@ const PROJECTS_DATA = [
     highlights: [
       "Engineered during Software/AI internship at Acespritech Solutions as a deployable face attendance module for Odoo ERP (hr.attendance).",
       "Sub-35 ms on-device CPU verification latency using 5-point YuNet detection and 128-d SFace embeddings with O(1) 1-to-1 cosine distance thresholding.",
-      "100% impostor rejection across 15 real-world edge tests (stranger video playback, synthetic blur, and extreme lighting).",
+      "100% genuine match (0.742 mean score vs 0.365 threshold) and 100% impostor rejection across 15 real-world edge test scenarios.",
       "Active eye-blink liveness verification and mirror-aware nose-to-eye pose symmetry gating, neutralizing photographic and video replay spoofing.",
-      "In-memory biometric vector matching: 128-d ONNX embeddings used for authentication with zero biometric template reconstruction risk."
+      "In-memory biometric vector matching: 128-d ONNX embeddings used for authentication with zero raw employee photo storage on disk."
     ],
     problemStatement: "Enterprises running Odoo ERP lose substantial payroll budget to 'buddy-punching' (coworkers clocking in for absent colleagues) and unverified remote attendance. Furthermore, proprietary biometric fingerprint scanners require expensive hardware leases, fail under humid or worn finger conditions, and cloud facial recognition services raise severe data compliance and employee privacy concerns.",
     solution: "Engineered an edge-native biometric verification module during my Software/AI internship at Acespritech Solutions, specifically tailored for Odoo ERP. Using standard office webcams, the system performs fast on-device face detection, verifies natural eye-blink liveness, converts facial features into encrypted 128-dimensional vectors, and commits authenticated check-in timestamps directly into Odoo's hr.attendance model in sub-35ms with zero external cloud dependencies.",
@@ -105,7 +119,7 @@ const PROJECTS_DATA = [
       "On-Device Verification Latency: Sub-35 ms execution on standard office CPU hardware without requiring expensive dedicated GPUs.",
       "Neural Feature Alignment: 5-point facial landmark detection via lightweight YuNet DNN coupled with 128-dimensional SFace feature embeddings.",
       "Liveness & Anti-Spoofing Algorithm: Dynamic eye-aspect-ratio (EAR) blink gating and nose-to-eye pose symmetry analysis neutralizing 2D photo and screen replays.",
-      "Privacy-Preserving Vector Matching: O(1) 1-to-1 cosine distance thresholding (similarity threshold >= 0.363); raw facial imagery is wiped immediately from memory post-verification."
+      "Privacy-Preserving Vector Matching: O(1) 1-to-1 cosine distance thresholding (similarity threshold >= 0.365); raw facial imagery is wiped immediately from memory post-verification."
     ],
     gitLink: "https://github.com/purohitgorang/face-detection-biometrics",
     diagramSvg: `
@@ -142,7 +156,7 @@ const PROJECTS_DATA = [
         <rect x="390" y="60" width="150" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
         <text x="465" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">SFace Embedding</text>
         <text x="465" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">128-d Vector</text>
-        <text x="465" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">Cosine Sim &gt;= 0.363</text>
+        <text x="465" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">Cosine Sim &gt;= 0.365</text>
         <text x="465" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">Photos Discarded</text>
 
         <!-- Arrow 3 -> 4 -->
@@ -172,20 +186,20 @@ const PROJECTS_DATA = [
     category: "Distributed Web & Systems",
     summary: "Production enterprise recruitment and staffing platform connecting qualified professionals with India's leading employers in Healthcare, Hospitality, FMCG, and Aviation.",
     image: "images/bluestar-employment.png",
-    tags: ["Jamstack", "Netlify Edge CDN", "Vanilla JS", "Headless Google Sheets", "Zero OpEx"],
+    tags: ["Cloudflare Pages", "Cloudflare Workers", "Jamstack", "Google Apps Script", "Zero OpEx"],
     highlights: [
       "Commercial Production Deployment: Live at bluestaremployment.com, serving enterprise recruitment operations across India in Healthcare, Hospitality, FMCG, and Aviation.",
-      "Zero-Code HR Operations: Custom headless Google Sheets pipeline allowing non-technical recruiters to post, update, and archive active vacancies instantly without developer assistance.",
-      "Serverless Candidate Pipeline: Automated applicant form intake and routing with instant notification dispatch directly to regional hiring coordinators.",
-      "Zero Recurring Infrastructure Cost: Deployed on a hardened Jamstack architecture across global Edge CDN nodes, eliminating database maintenance overhead and server hosting fees."
+      "Edge-Cached Architecture: Deployed on Cloudflare Pages and Cloudflare Workers, using edge caching to decrease page load latency by 45% compared to legacy dynamic servers.",
+      "Zero-Code HR Operations: Dynamic listing and routing framework supporting 500+ live vacancies via Cloudflare Workers and Google Apps Script, with $0 recurring server OpEx.",
+      "Streamlined Candidate Experience: Conducted usability iterations with recruiters to streamline application flows, resulting in a 25% increase in completed mobile submissions."
     ],
     problemStatement: "Bluestar Employment Solutions needed a high-performance web platform to showcase vetted talent and live job openings. Traditional dynamic CMS platforms (such as WordPress) introduce ongoing hosting maintenance costs, slow mobile load times, and constant security vulnerabilities like SQL injection and plugin CVEs.",
-    solution: "Architected and deployed a hardened Jamstack web platform on global edge CDN nodes. Integrated a headless Google Sheets database pipeline via Google Apps Script that serves sanitized data feeds directly to lightweight client browsers, delivering high reliability with zero database attack surface.",
+    solution: "Architected and deployed a hardened Jamstack web platform on Cloudflare Pages and Cloudflare Workers. Integrated a headless Google Sheets database pipeline via Google Apps Script that serves sanitized data feeds directly to lightweight client browsers, delivering high reliability with zero database attack surface and $0 recurring server OpEx.",
     systemDesignSpecs: [
-      "Global Edge Distribution: Static pre-rendering cached across worldwide Netlify Edge CDN nodes with automated cache invalidation.",
-      "Headless CMS Architecture: Google Sheets serving as a structured tabular database queried via lightweight JSON endpoints.",
+      "Edge Caching & Distribution: Global edge routing and caching via Cloudflare Pages and Cloudflare Workers, decreasing page load latency by 45%.",
+      "High-Capacity Vacancy Routing: Dynamic listing and routing framework supporting 500+ concurrent job postings via Google Apps Script JSON feeds.",
       "Serverless Form Processing: Sanitized applicant submission pipeline with zero SQL injection risk and automated recruiter notifications.",
-      "Optimized Client Footprint: Zero-framework Vanilla JS engine achieving sub-second First Contentful Paint (FCP) on mobile networks."
+      "Zero Recurring OpEx: Hardened Jamstack architecture operating with zero monthly database maintenance or server hosting fees."
     ],
     gitLink: null,
     liveUrl: "https://bluestaremployment.com",
@@ -219,12 +233,12 @@ const PROJECTS_DATA = [
         <line x1="350" y1="107" x2="395" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr5)"/>
         <text x="372" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Deploy</text>
 
-        <!-- 3. Netlify Edge CDN -->
+        <!-- 3. Cloudflare Pages & Workers -->
         <rect x="400" y="60" width="160" height="95" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
-        <text x="480" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">Global Edge CDN</text>
-        <text x="480" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">Static Pre-rendering</text>
-        <text x="480" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">High Availability</text>
-        <text x="480" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">Zero OpEx</text>
+        <text x="480" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">Cloudflare Pages &amp; Workers</text>
+        <text x="480" y="106" font-family="monospace" font-size="9" text-anchor="middle" fill="#38BDF8">Edge Serverless Compute</text>
+        <text x="480" y="122" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">-45% Load Latency</text>
+        <text x="480" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">$0 Server OpEx</text>
 
         <!-- Arrow 3 -> 4 -->
         <line x1="560" y1="107" x2="605" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr5)"/>
@@ -254,15 +268,15 @@ const PROJECTS_DATA = [
     image: "images/drone-hawk-x-glass.png?v=3.0",
     tags: ["Perimeter Defense", "Edge Vision", "Air-Gapped", "FastAPI", "React 19", "PyTorch"],
     highlights: [
-      "Measured hardware latency: 14.8 ms (~67 FPS) on NVIDIA GTX 1650 (CUDA) and 42.1 ms on Intel i7 CPU fallback.",
-      "100% precision across 16-sample benchmark (8 multi-rotor/FPV drone targets, 8 wildlife and aviation distractors).",
+      "Measured hardware latency: 14.8 ms (~67.5 FPS) on NVIDIA GTX 1650 (CUDA) and 42.1 ms on Intel i7 CPU fallback.",
+      "100% precision across 16 real-world test scenes (8 multi-rotor/FPV drone targets, 8 wildlife and aviation distractors).",
       "Presentation Attack Defense (PAD) using dual-head spatial bounding-box suppression to detect and reject screen and monitor replays.",
       "Air-gapped edge architecture with zero cloud egress, zero external API keys, and local SQLite/JSON incident telemetry."
     ],
     problemStatement: "Securing airspaces against unauthorized commercial drone incursions requires instant, reliable detection. Traditional radar systems struggle with low-altitude micro-drones, while cloud-based computer vision APIs introduce high latency, require constant internet connectivity that fails in field environments, and introduce critical data privacy risks in secured facilities.",
     solution: "Architected a zero-cloud, 100% offline perimeter defense system. Video streams from optical cameras are ingested locally and processed through a drone-specialized neural network running directly on local hardware. A high-throughput FastAPI backend processes live frames and broadcasts real-time threat bounding boxes and incident telemetry to a tactical React 19 operator HUD.",
     systemDesignSpecs: [
-      "Hardware Latency: 14.8 ms (~67 FPS) CUDA inference on NVIDIA GTX 1650; 42.1 ms CPU fallback on Intel i7.",
+      "Hardware Latency: 14.8 ms (~67.5 FPS) CUDA inference on NVIDIA GTX 1650; 42.1 ms CPU fallback on Intel i7.",
       "Benchmark Validation: 100% precision across 16-sample evaluation benchmark (8 multi-rotor/FPV drone targets, 8 environmental and aviation distractors).",
       "Presentation Attack Defense (PAD): Dual-head spatial bounding-box suppression algorithm detecting display bezels, refresh rate anomalies, and screen replays.",
       "Zero-Egress Data Architecture: Local SQLite/JSON incident telemetry with zero external network packets and zero remote API keys."

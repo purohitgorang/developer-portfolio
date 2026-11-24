@@ -1577,6 +1577,7 @@ body {
 .cred-dot.dot-blue { background-color: #2563EB; }
 .cred-dot.dot-green { background-color: #10B981; }
 .cred-dot.dot-yellow { background-color: #F59E0B; }
+.cred-dot.dot-purple { background-color: #9333EA; }
 
 .cred-text {
   font-size: 0.78rem;
