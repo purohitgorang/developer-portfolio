@@ -103,23 +103,22 @@ const PROJECTS_DATA = [
     classificationIcon: "🏢",
     classificationClass: "badge-enterprise",
     category: "Enterprise Systems & Computer Vision",
-    summary: "Enterprise biometric attendance engine engineered during my Software/AI internship at Acespritech Solutions. Packaged as a deployable module integrated directly with Odoo ERP (hr.attendance) using on-device YuNet landmark detection, 128-d SFace embeddings, and active eye-blink verification with sub-35ms inference.",
+    summary: "Workforce attendance module engineered during my Software/AI internship at Acespritech Solutions for Odoo ERP. Eliminates proxy clock-ins ('buddy-punching') and replaces costly fingerprint hardware using standard office webcams.",
     image: "images/face-detection-v2.png",
     tags: ["Odoo ERP", "Workforce Verification", "Anti-Spoofing", "Python", "OpenCV", "Acespritech"],
     highlights: [
-      "Engineered during Software/AI internship at Acespritech Solutions as a deployable face attendance module for Odoo ERP (hr.attendance).",
-      "Sub-35 ms on-device CPU verification latency using 5-point YuNet detection and 128-d SFace embeddings with O(1) 1-to-1 cosine distance thresholding.",
-      "100% genuine match (0.742 mean score vs 0.365 threshold) and 100% impostor rejection across 15 real-world edge test scenarios.",
-      "Active eye-blink liveness verification and mirror-aware nose-to-eye pose symmetry gating, neutralizing photographic and video replay spoofing.",
-      "In-memory biometric vector matching: 128-d ONNX embeddings used for authentication with zero raw employee photo storage on disk."
+      "Direct Odoo ERP Integration: Built as a deployable module that syncs verified check-in timestamps straight into Odoo's hr.attendance records.",
+      "Prevents Proxy Clock-Ins: Requires active eye-blink and pose verification before logging attendance, blocking printed photos and phone-screen replays.",
+      "Runs on Everyday Office Hardware: Works on standard office webcams and PCs without expensive biometric scanners or dedicated GPU servers.",
+      "Privacy-First Verification: Confirms employee identity in temporary memory and wipes visual frames immediately without saving raw face photos to disk."
     ],
     problemStatement: "Enterprises running Odoo ERP lose substantial payroll budget to 'buddy-punching' (coworkers clocking in for absent colleagues) and unverified remote attendance. Furthermore, proprietary biometric fingerprint scanners require expensive hardware leases, fail under humid or worn finger conditions, and cloud facial recognition services raise severe data compliance and employee privacy concerns.",
     solution: "Engineered an edge-native biometric verification module during my Software/AI internship at Acespritech Solutions, specifically tailored for Odoo ERP. Using standard office webcams, the system performs fast on-device face detection, verifies natural eye-blink liveness, converts facial features into encrypted 128-dimensional vectors, and commits authenticated check-in timestamps directly into Odoo's hr.attendance model in sub-35ms with zero external cloud dependencies.",
     systemDesignSpecs: [
-      "On-Device Verification Latency: Sub-35 ms execution on standard office CPU hardware without requiring expensive dedicated GPUs.",
-      "Neural Feature Alignment: 5-point facial landmark detection via lightweight YuNet DNN coupled with 128-dimensional SFace feature embeddings.",
-      "Liveness & Anti-Spoofing Algorithm: Dynamic eye-aspect-ratio (EAR) blink gating and nose-to-eye pose symmetry analysis neutralizing 2D photo and screen replays.",
-      "Privacy-Preserving Vector Matching: O(1) 1-to-1 cosine distance thresholding (similarity threshold >= 0.365); raw facial imagery is wiped immediately from memory post-verification."
+      "On-Device Verification Latency: Sub-35 ms execution on standard office CPU hardware using 5-point YuNet detection and 128-d SFace ONNX embeddings.",
+      "Benchmark Evaluation (15 Edge Scenarios): 100% genuine match (0.742 mean similarity score vs. 0.365 threshold) and 100% impostor rejection (max impostor score 0.231).",
+      "Liveness & Anti-Spoofing Gate: Dynamic eye-aspect-ratio (EAR) blink gating and mirror-aware nose-to-eye pose symmetry analysis neutralizing 2D photo and screen replays.",
+      "Privacy-Preserving Vector Matching: O(1) 1-to-1 cosine distance thresholding; raw facial imagery is wiped immediately from memory post-verification with zero disk persistence."
     ],
     gitLink: "https://github.com/purohitgorang/face-detection-biometrics",
     diagramSvg: `
@@ -184,22 +183,22 @@ const PROJECTS_DATA = [
     classificationIcon: "🌐",
     classificationClass: "badge-commercial",
     category: "Distributed Web & Systems",
-    summary: "Production enterprise recruitment and staffing platform connecting qualified professionals with India's leading employers in Healthcare, Hospitality, FMCG, and Aviation.",
+    summary: "Live enterprise staffing platform built for Bluestar Employment Solutions across Healthcare, Hospitality, FMCG, and Aviation. Replaces slow, maintenance-heavy CMS setups so HR coordinators can publish jobs directly without database or server overhead.",
     image: "images/bluestar-employment.png",
     tags: ["Cloudflare Pages", "Cloudflare Workers", "Jamstack", "Google Apps Script", "Zero OpEx"],
     highlights: [
-      "Commercial Production Deployment: Live at bluestaremployment.com, serving enterprise recruitment operations across India in Healthcare, Hospitality, FMCG, and Aviation.",
-      "Edge-Cached Architecture: Deployed on Cloudflare Pages and Cloudflare Workers, using edge caching to decrease page load latency by 45% compared to legacy dynamic servers.",
-      "Zero-Code HR Operations: Dynamic listing and routing framework supporting 500+ live vacancies via Cloudflare Workers and Google Apps Script, with $0 recurring server OpEx.",
-      "Streamlined Candidate Experience: Conducted usability iterations with recruiters to streamline application flows, resulting in a 25% increase in completed mobile submissions."
+      "Live Client Portal: Serving commercial recruitment operations at bluestaremployment.com across Healthcare, Hospitality, FMCG, and Aviation.",
+      "Zero-Code HR Operations: Headless Google Sheets & Apps Script workflow lets recruiters post, update, and close vacancies without developer help.",
+      "Fast Edge Delivery: Served via Cloudflare Pages and Workers to load reliably on mobile networks without database maintenance or recurring server fees.",
+      "Streamlined Mobile Applications: Refined candidate intake flows with recruiters to cut drop-offs and route applications straight to coordinators."
     ],
     problemStatement: "Bluestar Employment Solutions needed a high-performance web platform to showcase vetted talent and live job openings. Traditional dynamic CMS platforms (such as WordPress) introduce ongoing hosting maintenance costs, slow mobile load times, and constant security vulnerabilities like SQL injection and plugin CVEs.",
     solution: "Architected and deployed a hardened Jamstack web platform on Cloudflare Pages and Cloudflare Workers. Integrated a headless Google Sheets database pipeline via Google Apps Script that serves sanitized data feeds directly to lightweight client browsers, delivering high reliability with zero database attack surface and $0 recurring server OpEx.",
     systemDesignSpecs: [
       "Edge Caching & Distribution: Global edge routing and caching via Cloudflare Pages and Cloudflare Workers, decreasing page load latency by 45%.",
       "High-Capacity Vacancy Routing: Dynamic listing and routing framework supporting 500+ concurrent job postings via Google Apps Script JSON feeds.",
-      "Serverless Form Processing: Sanitized applicant submission pipeline with zero SQL injection risk and automated recruiter notifications.",
-      "Zero Recurring OpEx: Hardened Jamstack architecture operating with zero monthly database maintenance or server hosting fees."
+      "Conversion & UX Iteration: Streamlined mobile candidate application flow, increasing completed mobile submissions by 25%.",
+      "Zero Recurring OpEx: Hardened Jamstack architecture operating with $0 recurring server hosting or database maintenance fees."
     ],
     gitLink: null,
     liveUrl: "https://bluestaremployment.com",
@@ -264,14 +263,14 @@ const PROJECTS_DATA = [
     classificationIcon: "🛡️",
     classificationClass: "badge-defense",
     category: "Perimeter Defense & Computer Vision",
-    summary: "Air-gapped edge computer vision system for airspace perimeter security, detecting aerial drones and multi-rotors using fine-tuned YOLOv8, PyTorch CUDA hardware acceleration, and real-time optical video feeds.",
+    summary: "Offline airspace security tool built to detect unauthorized low-altitude drones in real time. Designed for sensitive perimeters where conventional radar misses small multi-rotors and cloud video APIs cannot be trusted or reached.",
     image: "images/drone-hawk-x-glass.png?v=3.0",
     tags: ["Perimeter Defense", "Edge Vision", "Air-Gapped", "FastAPI", "React 19", "PyTorch"],
     highlights: [
-      "Measured hardware latency: 14.8 ms (~67.5 FPS) on NVIDIA GTX 1650 (CUDA) and 42.1 ms on Intel i7 CPU fallback.",
-      "100% precision across 16 real-world test scenes (8 multi-rotor/FPV drone targets, 8 wildlife and aviation distractors).",
-      "Presentation Attack Defense (PAD) using dual-head spatial bounding-box suppression to detect and reject screen and monitor replays.",
-      "Air-gapped edge architecture with zero cloud egress, zero external API keys, and local SQLite/JSON incident telemetry."
+      "Low-Altitude Threat Detection: Spots incoming drones and FPV quadcopters in live optical feeds while filtering out birds and background aircraft.",
+      "Air-Gapped On-Premise Execution: Runs locally with zero internet dependency, external API keys, or cloud video uploads.",
+      "Anti-Spoofing Screen Defense: Rejects attempts to trick perimeter cameras using drone footage replayed on phones or monitors.",
+      "Local Incident Logging: Records detection alerts and timestamps locally for offline audit and operator review."
     ],
     problemStatement: "Securing airspaces against unauthorized commercial drone incursions requires instant, reliable detection. Traditional radar systems struggle with low-altitude micro-drones, while cloud-based computer vision APIs introduce high latency, require constant internet connectivity that fails in field environments, and introduce critical data privacy risks in secured facilities.",
     solution: "Architected a zero-cloud, 100% offline perimeter defense system. Video streams from optical cameras are ingested locally and processed through a drone-specialized neural network running directly on local hardware. A high-throughput FastAPI backend processes live frames and broadcasts real-time threat bounding boxes and incident telemetry to a tactical React 19 operator HUD.",
@@ -349,10 +348,10 @@ const PROJECTS_DATA = [
     image: "images/auraassess.png",
     tags: ["Candidate Rehearsal", "Speech Pacing", "Audio DSP", "FastAPI", "WebSockets", "Private Sandbox"],
     highlights: [
-      "Objective Presentation Rehearsal: Helps speakers detect speech rushing, voice modulation issues, and nervous posture habits before high-stakes technical interviews and keynotes.",
-      "100% Private In-Memory Processing: Protects sensitive candidate rehearsals by processing audio and motion telemetry entirely in temporary memory—zero video or audio is ever recorded to disk.",
-      "Individualized Baseline Calibration: Calibrates against each speaker's unique natural baseline during a 15-second warm-up, ensuring feedback adapts to personal styles rather than applying rigid stereotypes.",
-      "Real-Time Composure Dashboard: Translates complex speech signals and motion dynamics into clear, actionable pacing trends delivered over a low-latency live interface."
+      "Objective Presentation Rehearsal: Helps speakers detect speech rushing, voice modulation issues, and nervous posture habits before interviews and keynotes.",
+      "Private In-Memory Processing: Protects sensitive rehearsals by analyzing audio and motion telemetry purely in temporary memory with zero disk recording.",
+      "Individualized Baseline Calibration: Adapts to each speaker's natural pacing during a brief warm-up rather than judging against rigid stereotypes.",
+      "Real-Time Composure Dashboard: Translates speech signals and motion dynamics into clear, actionable pacing feedback during practice."
     ],
     problemStatement: "Preparing for high-stakes interviews, executive pitches, and technical presentations is often hampered by blind spots in speaking pace, voice inflection, and nervous body language. Practicing in front of peers or mock interviewers can trigger performance anxiety, while existing automated tools often attempt to 'score' candidates unfairly or store sensitive user recordings on external servers.",
     solution: "Built a self-contained, client-calibrated rehearsal sandbox that analyzes speech prosody and body language dynamics in real-time. Instead of evaluating or ranking individuals, the engine computes individualized statistical deviations against a 15-second opening baseline, streaming real-time pacing feedback and session trend graphs over WebSockets with zero persistent media storage.",
