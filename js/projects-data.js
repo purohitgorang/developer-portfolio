@@ -491,3 +491,86 @@ const PROJECTS_DATA = [
     `
   }
 ];
+
+const UNDER_DEVELOPMENT_PROJECTS = [
+  {
+    id: "06",
+    slug: "edith",
+    displayUrl: "edith-security",
+    title: "EDITH — Autonomous Cloud Posture & Cybersecurity Auditor",
+    shortTitle: "EDITH",
+    inDevelopment: true,
+    classification: "Under Development — Cybersecurity & Cloud Posture Platform",
+    classificationIcon: "🛡️",
+    classificationClass: "badge-wip",
+    category: "Cloud Security & Infrastructure Auditing",
+    summary: "Autonomous multi-domain security auditing platform built to eliminate DevSecOps tool sprawl. Scans cloud configurations, exposed secrets, live web perimeters, and container definitions through one unified web dashboard and CLI.",
+    image: "images/edith-logo.png",
+    tags: ["Cybersecurity", "Python", "FastAPI", "AWS / Boto3", "Docker Hardening", "In Progress"],
+    highlights: [
+      "Unified Multi-Domain Scanner: Consolidates cloud posture, web perimeter headers, codebase secrets, and container hardening checks into one local platform.",
+      "Cloud & Container Hygiene: Flags public S3 buckets, missing IAM root MFA, open security-group ingress, root Dockerfile users, and mounted Docker sockets.",
+      "Web Perimeter & Secret Detection: Checks live endpoints for missing CSP, HSTS, and TLS posture while scanning repositories for exposed API keys and database URIs.",
+      "Executive & Pipeline Reporting: Outputs self-contained HTML security posture reports alongside structured JSON artifacts for automated CI/CD checks."
+    ],
+    problemStatement: "Security teams and developers typically rely on separate, fragmented tools for AWS posture audits, HTTP security header checks, repository secret scanning, and Dockerfile hardening—creating blind spots across infrastructure and slowing down remediation.",
+    solution: "Engineering EDITH (built on the AegisAudit core engine) as an asynchronous Python security platform with both a FastAPI web dashboard and a standalone CLI. Modular domain plugins feed findings into a weighted posture-scoring engine that produces deterministic severity ratings and self-contained HTML/JSON executive reports.",
+    systemDesignSpecs: [
+      "4-Domain Async AuditEngine: Runs Cloud Posture (S3, IAM, Security Groups via boto3), Web Perimeter (CSP, HSTS, X-Frame-Options, SSL via httpx), Secret Exposure Regex, and Dockerfile hardening checks.",
+      "Weighted 0–100 Posture Scoring: Applies deterministic severity deductions (Critical: -20 pts, High: -10 pts, Medium: -4 pts, Low: -1 pt) mapped to remediation SLA tiers.",
+      "Dual Execution Surfaces: FastAPI web dashboard UI (Port 8013) plus standalone CLI supporting live URL targets, local repo paths, and AWS config dumps.",
+      "Reporting & Verification: Exports executive HTML and machine-readable JSON audit reports, backed by pytest unit coverage across cloud, secret, web, and scoring modules."
+    ],
+    gitLink: null,
+    diagramSvg: `
+      <svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr6" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+          </marker>
+        </defs>
+        <rect width="760" height="220" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+
+        <!-- 1. Targets -->
+        <rect x="20" y="60" width="145" height="95" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="92" y="88" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Audit Targets</text>
+        <text x="92" y="106" font-family="monospace" font-size="8.5" text-anchor="middle" fill="#64748B">AWS IAM / S3 / SG</text>
+        <text x="92" y="121" font-family="monospace" font-size="8.5" text-anchor="middle" fill="#64748B">Web URL &amp; SSL</text>
+        <text x="92" y="136" font-family="monospace" font-size="8.5" text-anchor="middle" fill="#64748B">Repo &amp; Dockerfile</text>
+
+        <!-- Arrow 1 -> 2 -->
+        <line x1="165" y1="107" x2="205" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr6)"/>
+        <text x="185" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Scan</text>
+
+        <!-- 2. AuditEngine -->
+        <rect x="210" y="55" width="165" height="105" rx="4" fill="#0F172A" stroke="#000000" stroke-width="2"/>
+        <text x="292" y="83" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#F8FAFC">EDITH AuditEngine</text>
+        <text x="292" y="101" font-family="monospace" font-size="8.5" text-anchor="middle" fill="#38BDF8">4 Async Plugins</text>
+        <text x="292" y="117" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#94A3B8">boto3 + httpx + Regex</text>
+        <text x="292" y="135" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#F59E0B">In Active Development</text>
+
+        <!-- Arrow 2 -> 3 -->
+        <line x1="375" y1="107" x2="415" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr6)"/>
+        <text x="395" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Score</text>
+
+        <!-- 3. Scorer -->
+        <rect x="420" y="65" width="145" height="85" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="492" y="92" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">Posture Scorer</text>
+        <text x="492" y="110" font-family="monospace" font-size="9" text-anchor="middle" fill="#0284C7">0–100 Normalizer</text>
+        <text x="492" y="126" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#64748B">Crit -20 / High -10</text>
+        <text x="492" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#10B981">Grade A+ to F</text>
+
+        <!-- Arrow 3 -> 4 -->
+        <line x1="565" y1="107" x2="605" y2="107" stroke="#000" stroke-width="2" marker-end="url(#arr6)"/>
+        <text x="585" y="100" font-family="monospace" font-size="8" text-anchor="middle" fill="#64748B">Output</text>
+
+        <!-- 4. UI & Reports -->
+        <rect x="610" y="65" width="130" height="85" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+        <text x="675" y="92" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000">FastAPI + CLI</text>
+        <text x="675" y="110" font-family="monospace" font-size="9" text-anchor="middle" fill="#64748B">Port 8013 UI</text>
+        <text x="675" y="126" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#64748B">HTML Exec Report</text>
+        <text x="675" y="140" font-family="sans-serif" font-size="8" text-anchor="middle" fill="#22C55E">CI/CD JSON Export</text>
+      </svg>
+    `
+  }
+];

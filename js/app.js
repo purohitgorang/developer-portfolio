@@ -43,83 +43,93 @@ document.addEventListener('DOMContentLoaded', () => {
     '01': 'tint-coral',
     '02': 'tint-mint',
     '03': 'tint-sky',
-    '05': 'tint-amber'
+    '05': 'tint-amber',
+    '06': 'tint-obsidian'
   };
 
   const tagColorClasses = ['tag-yellow', 'tag-purple', 'tag-pink', 'tag-green', 'tag-blue'];
 
-  // 2. Render Project Cards with Actual UI Screenshots
+  function renderProjectCard(project, idx) {
+    const tintClass = tintClasses[project.id] || 'tint-lavender';
+    const mainTagColor = tagColorClasses[idx % tagColorClasses.length];
+
+    return `
+      <article class="neo-project-card" data-project-id="${project.id}">
+        <!-- Left: Real UI Screenshot in Neo-Brutalist Browser Frame -->
+        <div class="project-media-col ${tintClass}">
+          <div class="browser-frame" data-id="${project.id}" title="Click to inspect system design architecture">
+            <div class="browser-bar">
+              <span class="browser-dot dot-red"></span>
+              <span class="browser-dot dot-yellow"></span>
+              <span class="browser-dot dot-green"></span>
+              <span class="browser-address">${project.displayUrl || project.slug}</span>
+            </div>
+            <img 
+              src="${project.image}" 
+              alt="${project.title} Interface Screenshot" 
+              class="browser-image"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Right: Technical Details & Case Study Information -->
+        <div class="project-content-col">
+          <div>
+            ${project.classification ? `
+              <div class="project-classification-badge ${project.classificationClass || ''}">
+                <span class="classification-badge-icon">${project.classificationIcon || '✦'}</span>
+                <span class="classification-badge-text">${project.classification}</span>
+              </div>
+            ` : ''}
+
+            <div class="project-tags-row">
+              <span class="neo-tag ${mainTagColor}">${project.category}</span>
+              ${project.tags.slice(0, 3).map((tag, tIdx) => `
+                <span class="neo-tag ${tagColorClasses[(tIdx + 1) % tagColorClasses.length]}">${tag}</span>
+              `).join('')}
+            </div>
+
+            <h3 class="project-h3-title">${project.title}</h3>
+            <p class="project-summary-text">${project.summary}</p>
+            
+            <ul class="project-bullets-list">
+              ${project.highlights.map(h => `<li>${h}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="project-actions-row">
+            <button class="btn-card-diagram" data-id="${project.id}">
+              <span>System Design & Flowchart</span> ➔
+            </button>
+            ${project.liveUrl ? `
+              <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-live" onclick="event.stopPropagation()">
+                Live Website ↗
+              </a>
+            ` : ''}
+            ${project.gitLink ? `
+              <a href="${project.gitLink}" target="_blank" rel="noopener noreferrer" class="btn-card-github" onclick="event.stopPropagation()">
+                GitHub ↗
+              </a>
+            ` : ''}
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  // 2. Render Featured & Under-Development Project Cards
   const projectsList = document.getElementById('projectsList');
   if (projectsList && typeof PROJECTS_DATA !== 'undefined') {
-    projectsList.innerHTML = PROJECTS_DATA.map((project, idx) => {
-      const tintClass = tintClasses[project.id] || 'tint-lavender';
-      const mainTagColor = tagColorClasses[idx % tagColorClasses.length];
+    projectsList.innerHTML = PROJECTS_DATA.map((project, idx) => renderProjectCard(project, idx)).join('');
+  }
 
-      return `
-        <article class="neo-project-card" data-project-id="${project.id}">
-          <!-- Left: Real UI Screenshot in Neo-Brutalist Browser Frame -->
-          <div class="project-media-col ${tintClass}">
-            <div class="browser-frame" data-id="${project.id}" title="Click to inspect system design architecture">
-              <div class="browser-bar">
-                <span class="browser-dot dot-red"></span>
-                <span class="browser-dot dot-yellow"></span>
-                <span class="browser-dot dot-green"></span>
-                <span class="browser-address">${project.displayUrl || project.slug}</span>
-              </div>
-              <img 
-                src="${project.image}" 
-                alt="${project.title} Interface Screenshot" 
-                class="browser-image"
-                loading="lazy"
-              />
-            </div>
-          </div>
+  const underDevList = document.getElementById('underDevList');
+  if (underDevList && typeof UNDER_DEVELOPMENT_PROJECTS !== 'undefined') {
+    underDevList.innerHTML = UNDER_DEVELOPMENT_PROJECTS.map((project, idx) => renderProjectCard(project, idx + 2)).join('');
+  }
 
-          <!-- Right: Technical Details & Case Study Information -->
-          <div class="project-content-col">
-            <div>
-              ${project.classification ? `
-                <div class="project-classification-badge ${project.classificationClass || ''}">
-                  <span class="classification-badge-icon">${project.classificationIcon || '✦'}</span>
-                  <span class="classification-badge-text">${project.classification}</span>
-                </div>
-              ` : ''}
-
-              <div class="project-tags-row">
-                <span class="neo-tag ${mainTagColor}">${project.category}</span>
-                ${project.tags.slice(0, 3).map((tag, tIdx) => `
-                  <span class="neo-tag ${tagColorClasses[(tIdx + 1) % tagColorClasses.length]}">${tag}</span>
-                `).join('')}
-              </div>
-
-              <h3 class="project-h3-title">${project.title}</h3>
-              <p class="project-summary-text">${project.summary}</p>
-              
-              <ul class="project-bullets-list">
-                ${project.highlights.map(h => `<li>${h}</li>`).join('')}
-              </ul>
-            </div>
-
-            <div class="project-actions-row">
-              <button class="btn-card-diagram" data-id="${project.id}">
-                <span>System Design & Flowchart</span> ➔
-              </button>
-              ${project.liveUrl ? `
-                <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-live" onclick="event.stopPropagation()">
-                  Live Website ↗
-                </a>
-              ` : ''}
-              ${project.gitLink ? `
-                <a href="${project.gitLink}" target="_blank" rel="noopener noreferrer" class="btn-card-github" onclick="event.stopPropagation()">
-                  GitHub ↗
-                </a>
-              ` : ''}
-            </div>
-          </div>
-        </article>
-      `;
-    }).join('');
-
+  if (projectsList || underDevList) {
     // Attach click listeners to open System Design Modal
     document.querySelectorAll('.btn-card-diagram').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -150,7 +160,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. System Design & Architecture Flowchart Modal
   function openSystemDesignModal(projectId) {
-    const project = PROJECTS_DATA.find(p => p.id === projectId);
+    const allProjects = [
+      ...(typeof PROJECTS_DATA !== 'undefined' ? PROJECTS_DATA : []),
+      ...(typeof UNDER_DEVELOPMENT_PROJECTS !== 'undefined' ? UNDER_DEVELOPMENT_PROJECTS : [])
+    ];
+    const project = allProjects.find(p => p.id === projectId);
     if (!project || !modalContainer) return;
 
     modalContainer.innerHTML = `
@@ -159,9 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="modal-header">
             <div class="modal-title-group">
               ${project.classification ? `
-                <div class="project-classification-badge ${project.classificationClass || ''}" style="margin-bottom: 0.45rem;">
-                  <span class="classification-badge-icon">${project.classificationIcon || '✦'}</span>
-                  <span class="classification-badge-text">${project.classification}</span>
+                <div style="margin-bottom: 0.5rem;">
+                  <div class="project-classification-badge ${project.classificationClass || ''}" style="margin-bottom: 0;">
+                    <span class="classification-badge-icon">${project.classificationIcon || '✦'}</span>
+                    <span class="classification-badge-text">${project.classification}</span>
+                  </div>
                 </div>
               ` : ''}
               <span class="modal-category-label">${project.category}</span>
@@ -218,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <button class="btn-copy-clone" id="copyGitBtn">Copy Command 📋</button>
                 </div>
               ` : `
-                <span class="clone-code" style="color: #64748B;">Production Deployment — ${project.liveUrl ? project.liveUrl.replace('https://', '') : 'Live Platform'}</span>
+                <span class="clone-code" style="color: #64748B;">${project.inDevelopment ? `In Active Development — ${project.shortTitle || project.title}` : `Production Deployment — ${project.liveUrl ? project.liveUrl.replace('https://', '') : 'Live Platform'}`}</span>
                 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                   ${project.liveUrl ? `
                     <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-copy-clone" style="text-decoration: none; background: #BAE6FD; color: #0369A1; font-weight: 700;">Visit Live Platform ↗</a>

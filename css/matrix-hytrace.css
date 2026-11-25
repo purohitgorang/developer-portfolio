@@ -1631,6 +1631,38 @@ body {
   color: #14532D;
 }
 
+.badge-wip {
+  background-color: #E0F2FE;
+  color: #075985;
+  border-style: dashed;
+}
+
+/* Under Development Section */
+.under-dev-section {
+  background-color: #F6F2EA;
+  border-bottom: none;
+}
+
+.under-dev-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: #FEF3C7;
+  color: #92400E;
+  border: 1.5px solid var(--ink-primary);
+  border-radius: var(--radius-pill);
+  padding: 0.32rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: 2px 2px 0px var(--ink-primary);
+}
+
+.tint-obsidian {
+  background-color: #E0F2FE;
+}
+
 @media (max-width: 768px) {
   .btn-nav-resume {
     padding: 0 0.85rem;
