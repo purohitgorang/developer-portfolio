@@ -1502,7 +1502,6 @@ body {
   text-decoration: none;
   color: var(--ink-primary);
   background-color: var(--pastel-yellow);
-  border-right: var(--border-main);
   transition: all 0.15s ease;
 }
 
